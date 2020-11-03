@@ -1,3 +1,4 @@
 # Enable powerline but nothing else
 *
 !powerline/
+!ranger/
