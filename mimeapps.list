@@ -1,3 +1,4 @@
 [Added Associations]
 text/markdown=firefox.desktop;
 application/pdf=chromium.desktop;firefox.desktop;
+image/jpeg=mupdf.desktop;gimp.desktop;chromium.desktop;
