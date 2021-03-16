@@ -1,5 +1,6 @@
 # Enable powerline but nothing else
 *
+!README.md
 !powerline/
 !ranger/
 !ranger/*
