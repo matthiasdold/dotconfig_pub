@@ -2,6 +2,9 @@
 *
 !powerline/
 !ranger/
+!ranger/*
 !nvim/
+!nvim/*
 !papis/
+!papis/*
 
