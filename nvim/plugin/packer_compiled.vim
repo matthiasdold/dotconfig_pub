@@ -43,10 +43,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/dracula"
   },
+  ["forest-night"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night"
+  },
   ["galaxyline.nvim"] = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20doda_galaxyline\frequire\0" },
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["nord-vim"] = {
     loaded = true,
@@ -55,6 +63,10 @@ _G.packer_plugins = {
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -77,15 +89,39 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/doda/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
+  sonokai = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/sonokai"
+  },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/tender.vim"
+  },
+  ["vim-deep-space"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-deep-space"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
     loaded = false,
     needs_bufread = false,
     path = "/home/doda/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
   },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 
@@ -102,17 +138,17 @@ vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packe
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
+vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cpp ++once lua require("packer.load")({'ale'}, { ft = "cpp" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cmake ++once lua require("packer.load")({'ale'}, { ft = "cmake" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType racket ++once lua require("packer.load")({'ale'}, { ft = "racket" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'ale'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
 vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
+vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 END
 

@@ -23,6 +23,7 @@ return require('packer').startup(function()
 
     -- Better syntax higlighting
     -- Post-install/update hook with neovim command
+    -- NOTE: Hook did not work for me, I had to run manually
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- statusline
@@ -32,14 +33,21 @@ return require('packer').startup(function()
 	config = function() require'doda_galaxyline' end,
     }
 
-    -- nerd tree but nicer
+     -- Icons
     use {'kyazdani42/nvim-web-devicons'} 
+    use {'ryanoasis/vim-devicons'}
+
+    -- nerd tree but nicer
     use {'kyazdani42/nvim-tree.lua'}
 
     -- Colorshemes
     -- You can alias plugin names
     use {'dracula/vim', as = 'dracula'}
     use {'arcticicestudio/nord-vim'}
+    use {'sainnhe/sonokai'}
+    use {'sainnhe/forest-night'}
+    use {'tyrannicaltoucan/vim-deep-space'}
+    use {'jacoborus/tender.vim'}
 
     -- Autocompletion
     -- Load on a combination of conditions: specific filetypes or commands
@@ -51,10 +59,22 @@ return require('packer').startup(function()
           config = 'vim.cmd[[ALEEnable]]'
     }
 
+    -- Debugger
+    use {'mfussenegger/nvim-dap'}
+
     -- LSPs
     use {'neovim/nvim-lspconfig'}
-    --use {'hrsh7th/nvim-compe'}
-    --use {'hrsh7th/vim-vsnip'}
+    use {'onsails/lspkind-nvim'}
+
+    -- Autocompletion
+    use {'hrsh7th/nvim-compe'}
+    use {'hrsh7th/vim-vsnip'}
+    use {'hrsh7th/vim-vsnip-integ'}
+    use {'honza/vim-snippets'}
+    -- use {'cstrap/python-snippets'}
+    -- use {'SirVer/ultisnips}
+
+ 
 end)
 
 

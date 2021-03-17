@@ -1,3 +1,22 @@
+-- 
+--     vim.o for setting global options
+--     vim.bo for setting buffer-scoped options
+--     vim.wo for setting window-scoped options
+--
+-- 	From neovim docs on lua:
+-- 	vim.g                                                   *vim.g*
+-- 	        Global (|g:|) editor variables.
+-- 	vim.b                                                   *vim.b*
+-- 	        Buffer-scoped (|b:|) variables for the current buffer.
+-- 	vim.w                                                   *vim.w*
+-- 	        Window-scoped (|w:|) variables for the current window.
+-- 	vim.t                                                   *vim.t*
+-- 	        Tabpage-scoped (|t:|) variables for the current tabpage.
+-- 	vim.v                                                   *vim.v*
+-- 	        |v:| variables.
+-- 	vim.env                                                 *vim.env*
+-- 	        Environment variables defined in the editor session.
+
 vim.wo.wrap=false                              	--Display long lines as just one line
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.o.pumheight=10                        	--Makes popup menu smaller
@@ -23,3 +42,5 @@ vim.o.updatetime=300                      	--Faster completion
 vim.o.timeoutlen=100                      	--By default timeoutlen is 1000 ms
 vim.o.clipboard="unnamedplus"               	--Copy paste between vim and everything else
 vim.o.completeopt="menuone,noselect"               	--Copy paste between vim and everything else
+vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
+vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'

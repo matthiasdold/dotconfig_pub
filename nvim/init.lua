@@ -16,6 +16,10 @@ require('utils')
 
 require('doda_galaxyline')
 require('doda_compe')
+require('doda_treesitter')
+require('doda_lspkind')
 
+-- LSP
+require('lsp.python-ls')
 
 

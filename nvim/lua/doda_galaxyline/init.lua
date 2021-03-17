@@ -1,4 +1,5 @@
 -- require'nvim-web-devicons'.setup()
+-- Line designed by ChristianChiarulli
 
 local gl = require('galaxyline')
 local gls = gl.section
@@ -50,8 +51,8 @@ gls.left[2] = {
                           ['!']  = colors.red,
                           t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return ' Nvim  '
-    end,
+      return '  ' .. vim.fn.expand('%:t:r') .. '.' .. vim.fn.expand('%:e') .. '  '
+  end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
       if not buffer_not_empty() then
@@ -176,7 +177,23 @@ gls.left[13] = {
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.right[1]= {
+
+gls.right[1] = {
+  ShowLspClient = {
+    provider = 'GetLspClient',
+    condition = function ()
+      local tbl = {['dashboard'] = true,['']=true}
+      if tbl[vim.bo.filetype] then
+        return false
+      end
+      return true
+    end,
+    icon = ' LSP:',
+    highlight = {colors.cyan,colors.bg,'bold'}
+  }
+}
+
+gls.right[2]= {
   FileFormat = {
     provider = 'FileFormat',
     separator = ' ',
@@ -184,7 +201,7 @@ gls.right[1]= {
     highlight = {colors.grey,colors.bg},
   }
 }
-gls.right[2] = {
+gls.right[3] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = ' | ',
@@ -192,7 +209,7 @@ gls.right[2] = {
     highlight = {colors.grey,colors.bg},
   },
 }
-gls.right[3] = {
+gls.right[4] = {
   PerCent = {
     provider = 'LinePercent',
     separator = ' |',
@@ -200,7 +217,7 @@ gls.right[3] = {
     highlight = {colors.grey,colors.bg},
   }
 }
-gls.right[4] = {
+gls.right[5] = {
   ScrollBar = {
     provider = 'ScrollBar',
     highlight = {colors.yellow,colors.purple},
