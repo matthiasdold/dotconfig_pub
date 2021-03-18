@@ -18,6 +18,9 @@ require('doda_galaxyline')
 require('doda_compe')
 require('doda_treesitter')
 require('doda_lspkind')
+require('doda_colorizer')
+require('doda_barbar')
+require('doda_autopairs')
 
 -- LSP
 require('lsp.python-ls')

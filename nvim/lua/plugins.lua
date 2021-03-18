@@ -3,6 +3,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -24,7 +25,7 @@ return require('packer').startup(function()
     -- Better syntax higlighting
     -- Post-install/update hook with neovim command
     -- NOTE: Hook did not work for me, I had to run manually
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter' }
 
     -- statusline
     use {
@@ -33,7 +34,10 @@ return require('packer').startup(function()
 	config = function() require'doda_galaxyline' end,
     }
 
-     -- Icons
+    -- tab bars
+    use 'romgrk/barbar.nvim'
+
+    -- Icons
     use {'kyazdani42/nvim-web-devicons'} 
     use {'ryanoasis/vim-devicons'}
 
@@ -49,15 +53,8 @@ return require('packer').startup(function()
     use {'tyrannicaltoucan/vim-deep-space'}
     use {'jacoborus/tender.vim'}
 
-    -- Autocompletion
-    -- Load on a combination of conditions: specific filetypes or commands
-    -- Also run code after load (see the "config" key)
-    use {
-         'w0rp/ale',
-          ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
-          cmd = 'ALEEnable',
-          config = 'vim.cmd[[ALEEnable]]'
-    }
+    -- Preview Colors
+    use 'norcalli/nvim-colorizer.lua'
 
     -- Debugger
     use {'mfussenegger/nvim-dap'}
@@ -73,6 +70,9 @@ return require('packer').startup(function()
     use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
     -- use {'SirVer/ultisnips}
+
+    -- General various
+    use {'windwp/nvim-autopairs'}
 
  
 end)
