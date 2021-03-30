@@ -23,6 +23,11 @@ require('doda_barbar')
 require('doda_autopairs')
 
 -- LSP
+require('lsp')
 require('lsp.python-ls')
+require('lsp.lua-ls')
 
+require('doda_iron')
 
+require('keymappings')
+vim.cmd [[source $HOME/.config/nvim/keymappings.vim]]

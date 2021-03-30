@@ -1,7 +1,6 @@
 --Bootstrapping for the package manager -> install on any system which contains
 -- this config
-local execute = vim.api.nvim_command
-local fn = vim.fn
+local execute = vim.api.nvim_command local fn = vim.fn
 
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
@@ -46,8 +45,9 @@ return require('packer').startup(function()
 
     -- Colorshemes
     -- You can alias plugin names
-    use {'dracula/vim', as = 'dracula'}
-    use {'arcticicestudio/nord-vim'}
+    -- use {'dracula/vim', as = 'dracula'}
+    use {'christianchiarulli/nvcode-color-schemes.vim'}
+    -- use {'arcticicestudio/nord-vim'}
     use {'sainnhe/sonokai'}
     use {'sainnhe/forest-night'}
     use {'tyrannicaltoucan/vim-deep-space'}
@@ -61,19 +61,22 @@ return require('packer').startup(function()
 
     -- LSPs
     use {'neovim/nvim-lspconfig'}
+    use 'glepnir/lspsaga.nvim'
     use {'onsails/lspkind-nvim'}
 
     -- Autocompletion
     use {'hrsh7th/nvim-compe'}
     use {'hrsh7th/vim-vsnip'}
     use {'hrsh7th/vim-vsnip-integ'}
-    use {'honza/vim-snippets'}
+    --use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
-    -- use {'SirVer/ultisnips}
+    use {'SirVer/ultisnips'}
 
     -- General various
     use {'windwp/nvim-autopairs'}
 
+    -- REPL
+    use 'hkupty/iron.nvim'
  
 end)
 
