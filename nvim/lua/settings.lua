@@ -44,3 +44,7 @@ vim.o.clipboard="unnamedplus"               	--Copy paste between vim and everyt
 vim.o.completeopt="menuone,noselect"               	--Copy paste between vim and everything else
 vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
 vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
+
+
+-- Auto close
+vim.cmd('autocmd VimLeave * :!deactivate_node')

@@ -35,10 +35,8 @@ vim.cmd('nnoremap <silent> <C-b> <cmd>lua require(\'lspsaga.action\').smart_scro
 vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
 
-local lsp_config = {}
 
-function lsp_config.common_on_attach(client, bufnr)
-
+local function documentHighlight(client, bufnr)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
@@ -51,7 +49,19 @@ function lsp_config.common_on_attach(client, bufnr)
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]], false)
+
     end
+
+end
+local lsp_config = {}
+
+
+
+local lsp_config = {}
+
+function lsp_config.common_on_attach(client, bufnr)
+    documentHighlight(client, buffer)
 end
 
-return lsp_config
+
+return lsp_configend

@@ -9,25 +9,29 @@
 
 -- General imports
 require('plugins') --lua/plugins.lua
-require('keymappings')
 require('colorscheme')
 require('settings')
 require('utils')
+require('keymappings')
 
-require('doda_galaxyline')
-require('doda_compe')
-require('doda_treesitter')
-require('doda_lspkind')
-require('doda_colorizer')
-require('doda_barbar')
-require('doda_autopairs')
+require('c_galaxyline')
+require('c_compe')
+require('treesitter')
+require('c_lspkind')
+require('colorizer')
+require('barbar')
+require('autopairs')
+require('c_iron')
+require('c_gitsigns')
+require('c_startify')
 
 -- LSP
 require('lsp')
+require('lspkind')
+require('lspinstall')
 require('lsp.python-ls')
 require('lsp.lua-ls')
 
-require('doda_iron')
 
-require('keymappings')
+-- require('keymappings')
 vim.cmd [[source $HOME/.config/nvim/keymappings.vim]]

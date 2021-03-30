@@ -24,37 +24,42 @@ return require('packer').startup(function()
     -- Better syntax higlighting
     -- Post-install/update hook with neovim command
     -- NOTE: Hook did not work for me, I had to run manually
-    use { 'nvim-treesitter/nvim-treesitter' }
+    use 'nvim-treesitter/nvim-treesitter'
+    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 
     -- statusline
     use {
         'glepnir/galaxyline.nvim',
 	branch = 'main',
-	config = function() require'doda_galaxyline' end,
+	config = function() require'galaxyline' end,
     }
 
     -- tab bars
     use 'romgrk/barbar.nvim'
 
     -- Icons
-    use {'kyazdani42/nvim-web-devicons'} 
-    use {'ryanoasis/vim-devicons'}
+    use 'kyazdani42/nvim-web-devicons' 
+    use 'ryanoasis/vim-devicons'
 
     -- nerd tree but nicer
-    use {'kyazdani42/nvim-tree.lua'}
+    use 'kyazdani42/nvim-tree.lua'
 
     -- Colorshemes
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
-    use {'christianchiarulli/nvcode-color-schemes.vim'}
+    -- Note: christians pack includes nord, which we use
+    use 'christianchiarulli/nvcode-color-schemes.vim'
     -- use {'arcticicestudio/nord-vim'}
-    use {'sainnhe/sonokai'}
-    use {'sainnhe/forest-night'}
-    use {'tyrannicaltoucan/vim-deep-space'}
-    use {'jacoborus/tender.vim'}
+    use 'sainnhe/sonokai'
+    use 'sainnhe/forest-night'
+    use 'tyrannicaltoucan/vim-deep-space'
+    use 'jacoborus/tender.vim'
 
     -- Preview Colors
     use 'norcalli/nvim-colorizer.lua'
+
+    -- Advanced syntax higlighting
+    use 'sheerun/vim-polyglot'
 
     -- Debugger
     use {'mfussenegger/nvim-dap'}
@@ -63,6 +68,7 @@ return require('packer').startup(function()
     use {'neovim/nvim-lspconfig'}
     use 'glepnir/lspsaga.nvim'
     use {'onsails/lspkind-nvim'}
+    use 'kabouzeid/nvim-lspinstall' -- nice :LspInstall functionality
 
     -- Autocompletion
     use {'hrsh7th/nvim-compe'}
@@ -77,6 +83,18 @@ return require('packer').startup(function()
 
     -- REPL
     use 'hkupty/iron.nvim'
+
+    -- Gitsigns next to numbers
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'},
+    }
+
+    -- startify
+    use 'mhinz/vim-startify'
+
+
  
 end)
 

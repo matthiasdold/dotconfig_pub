@@ -41,9 +41,17 @@ _G.packer_plugins = {
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20doda_galaxyline\frequire\0" },
+    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15galaxyline\frequire\0" },
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["iron.nvim"] = {
     loaded = true,
@@ -81,6 +89,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
@@ -97,6 +109,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/doda/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   sonokai = {
     loaded = true,
@@ -124,6 +140,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/doda/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
   },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip"
@@ -135,7 +159,7 @@ _G.packer_plugins = {
 }
 
 -- Config for: galaxyline.nvim
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20doda_galaxyline\frequire\0", "config", "galaxyline.nvim")
+try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15galaxyline\frequire\0", "config", "galaxyline.nvim")
 
 -- Command lazy-loads
 vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
