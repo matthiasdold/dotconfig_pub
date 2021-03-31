@@ -24,7 +24,7 @@ local colors = {
   nord_cyan = '#88c0d0',
   nord_cyan_bright = '#8fbcbb',
   nord_magenta = '#b48ead',
-  nord_black = '#4c566a',
+  nord_black = '#2e3440',
   nord_red = '#bf616a',
   nord_white = '#eceff4',
   nord_yellow = '#ebcb8b',
@@ -43,7 +43,7 @@ gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
-      local mode_color = {n = colors.nord_dark_blue, 
+      local mode_color = {n = colors.nord_dark_blue,
                           i = colors.nord_green,
                           v = colors.nord_cyan,
                           [''] = colors.nord_blue,
@@ -57,13 +57,14 @@ gls.left[2] = {
                           R = colors.nord_red,
                           Rv = colors.nord_red,
                           cv = colors.nord_red,
-                          ce=colors.nord_red, 
+                          ce=colors.nord_red,
                           r = colors.nord_cyan,
-                          rm = colors.nord_cyan, 
+                          rm = colors.nord_cyan,
                           ['r?'] = colors.nord_cyan,
                           ['!']  = colors.nord_red,
                           t = colors.nord_red}
 
+      vim.api.nvim_command('hi GalaxyViMode guifg='..colors.nord_black)
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
       return '  ' .. vim.fn.expand('%:t:r') .. '.' .. vim.fn.expand('%:e') .. '  '

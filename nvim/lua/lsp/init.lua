@@ -56,9 +56,6 @@ end
 local lsp_config = {}
 
 
-
-local lsp_config = {}
-
 function lsp_config.common_on_attach(client, bufnr)
     documentHighlight(client, buffer)
 end

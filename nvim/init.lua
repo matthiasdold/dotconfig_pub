@@ -1,7 +1,7 @@
 --[[
         This is used to source packages and configs
         keeping them separate
-        The structure is derived from 
+        The structure is derived from
         https://github.com/ChristianChiarulli/nvcode
 
         And the new lua based setup
@@ -26,11 +26,13 @@ require('c_gitsigns')
 require('c_startify')
 
 -- LSP
+require('lspconfig')
 require('lsp')
 require('lspkind')
-require('lspinstall')
-require('lsp.python-ls')
-require('lsp.lua-ls')
+require('c_lspinstall')
+-- no more separate init, as this should be dealt by from lspinstall
+-- require('lsp.python-ls')
+-- require('lsp.lua-ls')
 
 
 -- require('keymappings')
