@@ -6,7 +6,6 @@ vim.g.maplocalleader=','
 vim.api.nvim_set_keymap('n', '<localleader>w', ':w<CR>', { noremap = true, silent = true })
 
 -- explorer
-vim.cmd('inoremap <expr> <C-n> :NvimTreeToggle<CR>')
 vim.api.nvim_set_keymap('n', '<localleader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- better window movement
@@ -48,6 +47,9 @@ vim.api.nvim_set_keymap('n', '<C-S>', '<Cmd>lua require("iron").core.send(vim.ap
 vim.api.nvim_set_keymap('n', '<C-s>', '<Cmd>lua require("iron").core.send_line()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<C-s>', '<Cmd>lua require("iron").core.send_visual()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = true })     -- terminal mode remap
+
+-- Markdown - not working: TODO - get this up
+-- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })
 
 -- Other interactive
 -- vim.cmd('autocmd FileType python vnoremap <silent> <C-s> m`""y:call vimteractive#sendlines(substitute(getreg(\'"\'), "\n*$", "", "")."\n")<CR>``')

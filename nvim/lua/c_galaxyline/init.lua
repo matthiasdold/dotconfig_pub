@@ -204,7 +204,7 @@ gls.right[1] = {
       end
       return true
     end,
-    icon = ' LSP:',
+    icon = ':',
     highlight = {colors.nord_cyan,colors.bg,'bold'}
   }
 }

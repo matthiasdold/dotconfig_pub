@@ -65,6 +65,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+  },
   ["nvcode-color-schemes.vim"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
@@ -144,6 +148,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
+  ["vim-rooter"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-rooter"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-startify"
@@ -162,10 +174,10 @@ _G.packer_plugins = {
 try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15galaxyline\frequire\0", "config", "galaxyline.nvim")
 
 -- Command lazy-loads
-vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 END
 

@@ -1,0 +1,5 @@
+--vim.g.UltiSnipsExpandTrigger="<C-e>"
+vim.g.UltiSnipsJumpForwardTrigger="<Tab>"
+vim.g.UltiSnipsJumpBackwardTrigger="<S-Tab>"
+vim.g.ultisnips_python_style="numpy"
+vim.g.UltiSnipsEditSplit="vertical"

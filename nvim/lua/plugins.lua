@@ -38,7 +38,7 @@ return require('packer').startup(function()
     use 'romgrk/barbar.nvim'
 
     -- Icons
-    use 'kyazdani42/nvim-web-devicons' 
+    use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
     -- nerd tree but nicer
@@ -74,7 +74,7 @@ return require('packer').startup(function()
     use {'hrsh7th/nvim-compe'}
     use {'hrsh7th/vim-vsnip'}
     use {'hrsh7th/vim-vsnip-integ'}
-    --use {'honza/vim-snippets'}
+    use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
     use {'SirVer/ultisnips'}
 
@@ -94,6 +94,11 @@ return require('packer').startup(function()
     -- startify
     use 'mhinz/vim-startify'
 
+    -- Markdown
+    use 'iamcco/markdown-preview.nvim'
+
+    -- Others
+    use 'airblade/vim-rooter'        -- look for project root and follow
 
  
 end)

@@ -1,25 +1,25 @@
 vim.g.startify_custom_header = {
-    '                                                 ___',
-    '                                          ,o88888',
-    '                                       ,o8888888',
-    '                 ,:o:o:oooo.        ,8O88Pd8888"',
-    '             ,.::.::o:ooooOoOoO. ,oO8O8Pd888"´',
-    '           ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"',
-    '          , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"',
-    '         , ..:.::o:ooOoOO8O888O8O,COCOO"',
-    '        , . ..:.::o:ooOoOOOO8OOOOCOCO"',
-    '         . ..:.::o:ooOoOoOO8O8OCCCC"o',
-    '            . ..:.::o:ooooOoCoCCC"o:o',
-    '            . ..:.::o:o:,cooooCo"oo:o:',
-    '          `   . . ..:.:cocoooo"´o:o:::',
-    '         .`   . ..::ccccoc"´o:o:o:::',
-    '        :.:.    ,c:cccc"´:.:.:.:.:.',
-    '      ..:.:"``::::c:"´..:.:.:.:.:.',
-    '   ...:.`.:.::::"´    . . . . .',
-    '   .. . ....:."´ `   .  . . ',
-    ' . . . ...."',
-    ' .. . ."',
-    '.',
+    '                                                                ',
+    '                                                         ,o88888',
+    '                                                      ,o8888888',
+    '                                ,:o:o:oooo.        ,8O88Pd8888"',
+    '                            ,.::.::o:ooooOoOoO. ,oO8O8Pd888"´',
+    '                          ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"',
+    '                         , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"',
+    '                        , ..:.::o:ooOoOO8O888O8O,COCOO"',
+    '                       , . ..:.::o:ooOoOOOO8OOOOCOCO"',
+    '                        . ..:.::o:ooOoOoOO8O8OCCCC"o',
+    '                           . ..:.::o:ooooOoCoCCC"o:o',
+    '                           . ..:.::o:o:,cooooCo"oo:o:',
+    '                         `   . . ..:.:cocoooo"´o:o:::',
+    '                        .`   . ..::ccccoc"´o:o:o:::',
+    '                       :.:.    ,c:cccc"´:.:.:.:.:.',
+    '                     ..:.:"``::::c:"´..:.:.:.:.:.',
+    '                  ...:.`.:.::::"´    . . . . .',
+    '                  .. . ....:."´ `   .  . . ',
+    '                . . . ...."',
+    '                .. . ."',
+    '               .',
 }
 
 vim.g.webdevicons_enable_startify = 1
@@ -37,7 +37,7 @@ vim.api.nvim_exec(
     true)
 
 vim.api.nvim_exec(
-    'let startify_bookmarks = [{ \'b\': \'~/.bashrc\' }, { \'f\': \'~/.config/fish/config.fish\' }, { \'r\': \'~/README.md\' }]',
+    'let startify_bookmarks = [{ \'b\': \'~/.bashrc\' }, { \'n\': \'~/.config/nvim/init.lua\' }, { \'f\': \'~/.config/fish/config.fish\' }, { \'r\': \'~/README.md\' }]',
     true)
 
 vim.cmd([[

@@ -46,5 +46,23 @@ vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.
 vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
 
 
+-- O is the global options object
+ --vim.o.python.formatter = 'yapf'
+ --vim.o.python.linter = 'flake8'
+ --vim.o.python.isort = true
+ --vim.o.python.autoformat = true
+ --vim.o.python.diagnositcs.virtual_text = true
+ --vim.o.python.diagnositcs.signs = true
+ --vim.o.python.diagnositcs.underline = true
+
+
+
+-- For markdown preview, not creating a separate folder
+-- TOOD: get this working
+--vim.g.mkdp_browser='firefox'
+--vim.g.mkdp_auto_open=1
+--vim.g.mkdp_auto_close=0
+
+
 -- Auto close
 vim.cmd('autocmd VimLeave * :!deactivate_node')
