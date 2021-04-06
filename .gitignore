@@ -2,7 +2,6 @@
 !README.md
 !powerline/
 !powerline/*
-!powerline/*/*
 !ranger/
 !ranger/*
 !nvim/
@@ -13,5 +12,4 @@
 !fish/
 !*.fish
 
-*__pycache__/*
 
