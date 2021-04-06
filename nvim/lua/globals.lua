@@ -43,6 +43,9 @@ O = {
     },
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}
+    colors = {
+
+    }
 }
 
 DATA_PATH = vim.fn.stdpath('data')

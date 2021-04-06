@@ -40,3 +40,10 @@ vim.cmd('hi BufferCurrentMod guibg=' .. bbcolors.current_modified_bg .. ' guifg=
 -- vim.cmd('hi BufferCurrentSign guibg=' .. bbcolors.current_sign_bg .. ' guifg=' .. bbcolors.current_sign_fg)
 vim.cmd('hi link BufferCurrentIcon BufferCurrent')
 vim.cmd('hi link BufferCurrentSign BufferCurrent')
+
+
+-- LSP saga
+vim.cmd('hi LspSagaCodeActionTruncateLine guibg=None guifg=#a3be8c')
+vim.cmd('hi LspSagaSignatureHelpBorder guibg=None guifg=#a3be8c')
+vim.cmd('hi DiagnosticInformation guibg=None guifg=#a3be8c')
+vim.cmd('hi DiagnosticInformation guibg=None guifg=#a3be8c')

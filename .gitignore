@@ -1,6 +1,7 @@
 *
 !README.md
 !powerline/
+!powerline/*
 !ranger/
 !ranger/*
 !nvim/

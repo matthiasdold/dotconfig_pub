@@ -3,8 +3,10 @@
 	"groups": {
 		"hostname":         { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
 		"environment":      { "fg": "white", "bg": "darkestgreen", "attrs": [] },
+        "node_virtualenv":  { "fg": "white", "bg": "nordgreen", "attrs": [] },
 		"mode":             { "fg": "darkestgreen", "bg": "brightgreen", "attrs": ["bold"] },
-		"attached_clients": { "fg": "white", "bg": "darkestgreen", "attrs": [] }
+		"attached_clients": { "fg": "white", "bg": "darkestgreen", "attrs": [] },
+		"user": { "fg": "black", "bg": "nordpolar", "attrs": [] }
 	},
 	"mode_translations": {
 		"vicmd": {
