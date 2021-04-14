@@ -16,7 +16,7 @@ require('utils')
 require('keymappings')
 
 require('c_galaxyline')
-require('c_compe')
+-- require('c_compe')
 require('c_treesitter')
 require('c_lspkind')
 require('c_colorizer')
@@ -31,12 +31,13 @@ require('c_vim_rooter')
 require('c_ulti_snippets')
 
 -- LSP
--- require('lspconfig')
+require('lspconfig')
 require('lsp')
 require('lspkind')
+-- for now trying the COC for python which is sourced 
+-- via vim_configs.vim --> TODO: translate to lua
 
--- no more separate init, as this should be dealt by from lspinstall
-require('lsp.python-ls')
+-- require('lsp.python-ls')
 require('lsp.lua-ls')
 
 -- require('keymappings')

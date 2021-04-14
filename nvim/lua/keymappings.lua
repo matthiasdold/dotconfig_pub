@@ -55,6 +55,6 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = 
 
 -- Other interactive
 -- easier folding
-vim.api.nvim_set_keymap('v', ' ', 'zA', { noremap = true, silent = false})     -- terminal mode remap
+vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true})     -- terminal mode remap
 
 -- vim.cmd('autocmd FileType python vnoremap <silent> <C-s> m`""y:call vimteractive#sendlines(substitute(getreg(\'"\'), "\n*$", "", "")."\n")<CR>``')

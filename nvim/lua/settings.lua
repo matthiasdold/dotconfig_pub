@@ -40,9 +40,12 @@ vim.wo.signcolumn="yes"                      	--Always show the signcolumn, othe
 vim.o.updatetime=300                      	--Faster completion
 vim.o.timeoutlen=100                      	--By default timeoutlen is 1000 ms
 vim.o.clipboard="unnamedplus"               	--Copy paste between vim and everything else
-vim.o.completeopt="menuone,noselect"               	--Copy paste between vim and everything else
+
+vim.g.asyncomplete_auto_completeopt = 0
+-- vim.o.completeopt="menuone,noinsert,noselect"
 vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
 vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
+
 
 
 -- For markdown preview, not creating a separate folder

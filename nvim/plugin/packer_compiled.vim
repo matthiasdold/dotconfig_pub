@@ -36,6 +36,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/coc.nvim"
+  },
   ["forest-night"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night"

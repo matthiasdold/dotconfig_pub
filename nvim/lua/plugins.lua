@@ -15,7 +15,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
-  
     -- Asynchroneous jobs
     -- Lazy loading:
     -- Load on specific commands
@@ -37,7 +36,7 @@ return require('packer').startup(function()
     -- tab bars
     use 'romgrk/barbar.nvim'
 
-    -- Icons
+    -- Icons, "use"
     use 'kyazdani42/nvim-web-devicons'
     use 'ryanoasis/vim-devicons'
 
@@ -69,6 +68,8 @@ return require('packer').startup(function()
     use 'glepnir/lspsaga.nvim'
     use {'onsails/lspkind-nvim'}
     use 'kabouzeid/nvim-lspinstall' -- nice :LspInstall functionality
+    -- use 'nvim-lua/completion-nvim'
+    use 'neoclide/coc.nvim'
 
     -- Autocompletion
     use {'hrsh7th/nvim-compe'}
