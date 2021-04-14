@@ -30,17 +30,17 @@ require('c_startify')
 require('c_vim_rooter')
 require('c_ulti_snippets')
 
--- LSP
-require('lspconfig')
-require('lsp')
+-- LSP --> trying to do this with CoC now
+-- require('lspconfig')
+-- require('lsp')
 require('lspkind')
--- for now trying the COC for python which is sourced 
 -- via vim_configs.vim --> TODO: translate to lua
 
 -- require('lsp.python-ls')
-require('lsp.lua-ls')
+-- require('lsp.lua-ls')
 
 -- require('keymappings')
 -- Vimscript based configs
-vim.cmd('source $HOME/.config/nvim/vim_configs.vim')
+vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 vim.cmd [[source $HOME/.config/nvim/keymappings.vim]]
+vim.cmd [[source $HOME/.config/nvim/vim/coc.vim]]
