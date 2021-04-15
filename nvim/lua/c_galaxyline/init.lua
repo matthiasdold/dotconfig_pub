@@ -39,6 +39,67 @@ local buffer_not_empty = function()
   return false
 end
 
+local function lsp_status(status)
+    shorter_stat = ''
+    for match in string.gmatch(status, "[^%s]+")  do
+        err_warn = string.find(match, "^[WE]%d+", 0)
+        if not err_warn then
+            shorter_stat = shorter_stat .. ' ' .. match
+        end
+    end
+    return shorter_stat
+end
+
+
+local function get_coc_lsp()
+  local status = vim.fn['coc#status']()
+  if not status or status == '' then
+      return ''
+  end
+  return lsp_status(status)
+end
+
+function get_diagnostic_info()
+  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+    return get_coc_lsp()
+    end
+  return ''
+end
+
+local function get_current_func()
+  local has_func, func_name = pcall(vim.fn.nvim_buf_get_var,0,'coc_current_function')
+  if not has_func then return end
+      return func_name
+  end
+
+function get_function_info()
+  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+    return get_current_func()
+    end
+  return ''
+end
+
+local function trailing_whitespace()
+    local trail = vim.fn.search("\\s$", "nw")
+    if trail ~= 0 then
+        return ' '
+    else
+        return nil
+    end
+end
+
+CocStatus = get_diagnostic_info
+CocFunc = get_current_func
+TrailingWhiteSpace = trailing_whitespace
+
+function has_file_type()
+    local f_type = vim.bo.filetype
+    if not f_type or f_type == '' then
+        return false
+    end
+    return true
+end
+
 gls.left[2] = {
   ViMode = {
     provider = function()
@@ -79,6 +140,7 @@ gls.left[2] = {
     highlight = {colors.grey, colors.bg,'bold'},
   },
 }
+
 -- gls.left[3] ={
 --   FileIcon = {
 --     separator = ' ',
@@ -194,6 +256,7 @@ gls.left[13] = {
   }
 }
 
+--[[
 gls.right[1] = {
   ShowLspClient = {
     provider = 'GetLspClient',
@@ -208,8 +271,25 @@ gls.right[1] = {
     highlight = {colors.nord_cyan,colors.bg,'bold'}
   }
 }
+]]
 
-gls.right[2]= {
+-- gls.right[1] = {
+--     CocStatus = {
+--      provider = CocStatus,
+--      highlight = {colors.green,colors.bg},
+--      icon = ':',
+--     }
+-- }
+-- 
+-- gls.left[2] = {
+--   CocFunc = {
+--     provider = CocFunc,
+--     icon = '  λ ',
+--     highlight = {colors.yellow,colors.bg},
+--   }
+-- }
+
+gls.right[3]= {
   FileFormat = {
     provider = 'FileFormat',
     separator = ' ',
@@ -217,7 +297,7 @@ gls.right[2]= {
     highlight = {colors.grey,colors.bg},
   }
 }
-gls.right[3] = {
+gls.right[4] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = ' | ',
@@ -225,7 +305,7 @@ gls.right[3] = {
     highlight = {colors.grey,colors.bg},
   },
 }
-gls.right[4] = {
+gls.right[5] = {
   PerCent = {
     provider = 'LinePercent',
     separator = ' |',
@@ -233,7 +313,7 @@ gls.right[4] = {
     highlight = {colors.grey,colors.bg},
   }
 }
-gls.right[5] = {
+gls.right[6] = {
   ScrollBar = {
     provider = 'ScrollBar',
     highlight = {colors.nord_green,colors.nord_black},

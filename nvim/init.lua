@@ -42,5 +42,4 @@ require('lspkind')
 -- require('keymappings')
 -- Vimscript based configs
 vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
-vim.cmd [[source $HOME/.config/nvim/keymappings.vim]]
 vim.cmd [[source $HOME/.config/nvim/vim/coc.vim]]

@@ -28,14 +28,17 @@
     "enumMember": "  "
   },
 
-  // python config
+  // python config --> note these comments work in this json, as the parser is clever enough
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  "python.analysis.diagnosticPublishDelay" : 500,
 
   "snippets.ultisnips.directories":
   [
     "UltiSnips",
     "~/.config/nvim/UltiSnips/"
   ],
+
+  // lua config
   "Lua.diagnostics.globals": ["vim", "O"]
 }
