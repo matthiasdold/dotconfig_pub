@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap('n', '<localleader>w', ':w<CR>', { noremap = true, silen
 -- explorer
 vim.api.nvim_set_keymap('n', '<localleader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
+-- save
+vim.api.nvim_set_keymap('n', '<localleader>w', ':w!<CR>', { noremap = true, silent = false})
+
 -- better window movement
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
@@ -56,5 +59,6 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = 
 -- Other interactive
 -- easier folding
 vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true})     -- terminal mode remap
-
+-- jump out of brackets etc
+vim.api.nvim_set_keymap('i', '<C-a>', '<C-o>a', { noremap = true, silent = true})     -- terminal mode remap
 -- vim.cmd('autocmd FileType python vnoremap <silent> <C-s> m`""y:call vimteractive#sendlines(substitute(getreg(\'"\'), "\n*$", "", "")."\n")<CR>``')

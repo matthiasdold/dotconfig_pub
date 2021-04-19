@@ -27,7 +27,7 @@ require('c_gitsigns')
 require('c_startify')
 
 -- Others
-require('c_vim_rooter')
+-- require('c_vim_rooter')
 require('c_ulti_snippets')
 
 -- LSP --> trying to do this with CoC now
@@ -43,3 +43,4 @@ require('lspkind')
 -- Vimscript based configs
 vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 vim.cmd [[source $HOME/.config/nvim/vim/coc.vim]]
+vim.cmd [[source $HOME/.config/nvim/vim/vim_matlab.vim]]

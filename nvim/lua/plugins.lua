@@ -85,6 +85,9 @@ return require('packer').startup(function()
     -- REPL
     use 'hkupty/iron.nvim'
 
+    -- matlab
+    use 'rahlir/nvim-matlab'
+
     -- Gitsigns next to numbers
     use {
       'lewis6991/gitsigns.nvim',

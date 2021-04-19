@@ -29,10 +29,14 @@
   },
 
   // python config --> note these comments work in this json, as the parser is clever enough
+  "python.pythonPath": "~/workspace/python/venvs/wvenv_3.9/bin",
   "python.linting.enabled": true,
+  "python.jediEnabled": true,
+  "python.jediPath": "~/workspace/python/venvs/nvim_env/lib/python3.9/site-packages",
   "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
   "python.analysis.diagnosticPublishDelay" : 500,
-
+  "python.autoComplete.showAdvancedMembers": true,
   "snippets.ultisnips.directories":
   [
     "UltiSnips",
