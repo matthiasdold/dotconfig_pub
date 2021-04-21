@@ -10,6 +10,7 @@
 !papis/*
 !fish/*
 !fish/
+!git/*
 !*.fish
 *pycache*
 

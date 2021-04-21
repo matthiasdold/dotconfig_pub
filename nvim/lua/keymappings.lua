@@ -23,8 +23,8 @@ vim.api.nvim_set_keymap('i', '<C-h>', '[]<left>', { silent = true, noremap = tru
 vim.api.nvim_set_keymap('i', '<C-l>', ']', { silent = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<C-s>', '{}<left>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('i', '<C-g>', '}', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('i', '{', '{}<left>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('i', '[', '[]<left>', { silent = true, noremap = true })
+--vim.api.nvim_set_keymap('i', '{', '{}<left>', { silent = true, noremap = true })
+--vim.api.nvim_set_keymap('i', '[', '[]<left>', { silent = true, noremap = true })
 
 -- Resize window
 vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })

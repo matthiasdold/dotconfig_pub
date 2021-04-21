@@ -1,5 +1,6 @@
 [papers]
 dir = ~/Documents/papers
+opentool = okular
 
 [settings]
 default-library = papers

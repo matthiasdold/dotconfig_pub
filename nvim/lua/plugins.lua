@@ -101,6 +101,9 @@ return require('packer').startup(function()
     -- Markdown
     use 'iamcco/markdown-preview.nvim'
 
+    -- Nicer python indentation
+    use 'Vimjas/vim-python-pep8-indent'
+
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
 
