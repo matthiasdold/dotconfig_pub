@@ -24,6 +24,7 @@ return require('packer').startup(function()
     -- Post-install/update hook with neovim command
     -- NOTE: Hook did not work for me, I had to run manually
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/playground'
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 
     -- statusline

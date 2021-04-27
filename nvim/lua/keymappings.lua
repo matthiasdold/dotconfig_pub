@@ -19,9 +19,9 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
 
 
 -- coding with german keyboard
-vim.api.nvim_set_keymap('i', '<C-h>', '[]<left>', { silent = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<C-h>', '[', { silent = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<C-l>', ']', { silent = true, noremap = true})
-vim.api.nvim_set_keymap('i', '<C-s>', '{}<left>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('i', '<C-s>', '{', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('i', '<C-g>', '}', { silent = true, noremap = true })
 --vim.api.nvim_set_keymap('i', '{', '{}<left>', { silent = true, noremap = true })
 --vim.api.nvim_set_keymap('i', '[', '[]<left>', { silent = true, noremap = true })
