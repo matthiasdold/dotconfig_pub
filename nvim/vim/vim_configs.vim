@@ -29,7 +29,16 @@ endif
 "----------------------------------------------------------
 " custom cmd for running the current script with ipython
 " Not working like this but on manual run of :term ipython %"
-autocmd FileType python vnoremap <buffer> <C-x> :term python %<CR>
+autocmd FileType python nnoremap <buffer> <C-x> :term python %<CR>
+
+
+" Trying to fix iron
+" NOTE: This is super interesting, that the following keymap from lua does not work
+" vim.api.nvim_set_keymap('v', '<C-s>', '<Cmd>lua require("iron").core.visual_send()<CR>', { noremap = true})
+"
+" This might explain other non working keymaps as well --> investigate if time allows
+vnoremap <C-s> :lua require("iron").core.visual_send()<CR>
+
 
 "----------------------------------------------------------
 "-- Config for the autocompletion

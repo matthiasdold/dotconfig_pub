@@ -85,6 +85,7 @@ return require('packer').startup(function()
 
     -- REPL
     use 'hkupty/iron.nvim'
+    -- use 'kassio/neoterm'
 
     -- matlab
     use 'rahlir/nvim-matlab'
