@@ -45,12 +45,23 @@ vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- Iron vim
-vim.api.nvim_set_keymap('n', '<C-S>', '<Cmd>lua require("iron").core.send(vim.api.nvim_buf_get_option(0,"ft"), vim.api.nvim_buf_get_lines(0, 0, -1, false))<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-S>', '<Cmd>lua require("iron").core.send(vim.api.nvim_buf_get_option(0,"ft"), vim.api.nvim_buf_get_lines(0, 0, -1, false))<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-s>', '<Cmd>lua require("iron").core.send_line()<CR>', { noremap = true, silent = true })
 -- for some reason <Plug>(iron-visual-send) does not work directly, so we remap to default keymap for this
 vim.api.nvim_set_keymap('v', '<C-s>', '<Cmd>lua require("iron").core.visual_send()<CR>', { noremap = true})
 -- vim.api.nvim_set_keymap('v', '<C-s>', 'y<C-w>wpa<CR><C-\\><C-n><C-w>p<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = true })     -- terminal mode remap
+
+-- Python execuation
+--vim.api.nvim_set_keymap('n', '<buffer> <C-x>', ":up<CR>:exec '! ipython3' shellescape(@%, 1)<CR>", {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<S-P>', ":up<CR>:exec '! python3 -m cProfile -o program.prof' shellescape(@%, 1)<CR> :exec '! svenv; snakeviz program.prof'<CR>", {noremap = true})
+
+-- interesting fact, I could not get this to work with 'bash'
+-- TODO: Think about how to derive the currently used venv -> not having svenv statically
+vim.o.shell="fish"
+vim.api.nvim_set_keymap('n', '<C-x>', ":term svenv; python %<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-P>', ":term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
+
 
 -- Markdown - not working: TODO - get this up
 -- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })
