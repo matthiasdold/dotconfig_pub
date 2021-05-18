@@ -34,6 +34,7 @@ vim.bo.shiftwidth=4                        	--Change the number of space charact
 vim.bo.expandtab=true                           --Converts tabs to spaces
 vim.bo.autoindent=true                         
 vim.wo.number = true
+vim.wo.relativenumber = true
 -- vim.wo.cursorline=true                          --Enable highlighting of the current line
 -- vim.o.showtabline=2                       	--Always show tabs
 -- vim.g.foldmethod="syntax"
