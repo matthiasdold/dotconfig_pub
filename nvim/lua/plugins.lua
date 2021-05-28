@@ -25,6 +25,7 @@ return require('packer').startup(function()
     -- NOTE: Hook did not work for me, I had to run manually
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
+    use {"windwp/nvim-ts-autotag", opt = true}
     use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 
     -- statusline
@@ -33,6 +34,16 @@ return require('packer').startup(function()
 	branch = 'main',
 	config = function() require'galaxyline' end,
     }
+
+    -- Finding files
+    -- use {"nvim-lua/popup.nvim", opt = true}
+    -- use {"nvim-lua/plenary.nvim", opt = true}
+    -- use {"nvim-telescope/telescope.nvim", opt = true}
+    -- use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+        }
 
     -- tab bars
     use 'romgrk/barbar.nvim'

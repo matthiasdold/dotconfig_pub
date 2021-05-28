@@ -16,7 +16,6 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
 
-
 -- coding with german keyboard
 vim.api.nvim_set_keymap('i', '<C-h>', '[', { silent = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<C-l>', ']', { silent = true, noremap = true})
@@ -62,6 +61,11 @@ vim.o.shell="fish"
 vim.api.nvim_set_keymap('n', '<C-x>', ":term svenv; python %<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', '<S-P>', ":term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
 
+-- Telescope
+vim.api.nvim_set_keymap('n', 'ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 
+vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true}) 
+vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true}) 
+vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true}) 
 
 -- Markdown - not working: TODO - get this up
 -- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })
@@ -72,3 +76,4 @@ vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true}) 
 -- jump out of brackets etc
 vim.api.nvim_set_keymap('i', '<C-a>', '<C-o>a', { noremap = true, silent = true})     -- terminal mode remap
 -- vim.cmd('autocmd FileType python vnoremap <silent> <C-s> m`""y:call vimteractive#sendlines(substitute(getreg(\'"\'), "\n*$", "", "")."\n")<CR>``')
+
