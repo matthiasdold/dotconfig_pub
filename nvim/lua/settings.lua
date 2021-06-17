@@ -45,6 +45,8 @@ vim.o.clipboard="unnamedplus"               	--Copy paste between vim and everyt
 
 vim.o.filetype="on"                         -- needs to be enabled to to have autocmd based of FileType working
 
+vim.o.hidden=true				-- To be able to move out of a modified buffer without writing
+
 vim.g.asyncomplete_auto_completeopt = 0
 -- vim.o.completeopt="menuone,noinsert,noselect"
 vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
