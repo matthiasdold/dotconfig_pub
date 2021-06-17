@@ -62,7 +62,7 @@ vim.api.nvim_set_keymap('n', '<C-x>', ":term svenv; python %<CR>", {noremap = tr
 vim.api.nvim_set_keymap('n', '<S-P>', ":term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
 
 -- Telescope
-vim.api.nvim_set_keymap('n', 'ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 
+vim.api.nvim_set_keymap('n', 'fj', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 
 vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true}) 
 vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true}) 
 vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true}) 

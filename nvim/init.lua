@@ -29,6 +29,7 @@ require('c_startify')
 -- Others
 -- require('c_vim_rooter')
 require('c_ulti_snippets')
+require('c_telescope')
 
 -- LSP --> trying to do this with CoC now
 -- require('lspconfig')

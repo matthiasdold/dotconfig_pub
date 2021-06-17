@@ -26,7 +26,7 @@ vim.o.mouse="a"                             	--Enable your mouse
 vim.o.splitbelow=true                          	--Horizontal splits will automatically be below
 vim.o.termguicolors=true
 vim.o.splitright=true                       	--Vertical splits will automatically be to the right
-vim.o.t_Co="256"                            	--Support 256 colors
+-- vim.o.t_Co="256"                            	--Support 256 colors --> was raising an error with latest build
 vim.o.conceallevel=0                      	--So that I can see `` in markdown files
 vim.bo.tabstop=4                           	--Insert 2 spaces for a tab
 vim.bo.softtabstop=4                           	--Insert 2 spaces for a tab
@@ -49,9 +49,6 @@ vim.g.asyncomplete_auto_completeopt = 0
 -- vim.o.completeopt="menuone,noinsert,noselect"
 vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
 vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
-
-
-
 -- For markdown preview, not creating a separate folder
 -- TOOD: get this working
 --vim.g.mkdp_browser='firefox'
@@ -60,4 +57,4 @@ vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
 
 
 -- Auto close TODO: Get this to work
-vim.cmd('autocmd VimLeave * :!deactivate_node')
+-- vim.cmd('autocmd VimLeave * :!deactivate_node')
