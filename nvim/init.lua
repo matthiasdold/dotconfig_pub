@@ -7,9 +7,12 @@
         And the new lua based setup
 ]]
 
+-- Use the vimscript stuff here first, as the neoterm needs to happen
+-- before syntax on
+vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 -- General imports
-require('plugins') --lua/plugins.lua
 require('colorscheme')
+require('plugins') --lua/plugins.lua
 require('globals')
 require('settings')
 require('utils')
@@ -23,6 +26,7 @@ require('c_colorizer')
 require('barbar')
 require('autopairs')
 require('c_iron')
+-- require('neoterm')
 require('c_gitsigns')
 require('c_startify')
 
@@ -42,6 +46,5 @@ require('lspkind')
 
 -- require('keymappings')
 -- Vimscript based configs
-vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 vim.cmd [[source $HOME/.config/nvim/vim/coc.vim]]
 vim.cmd [[source $HOME/.config/nvim/vim/vim_matlab.vim]]

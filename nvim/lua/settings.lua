@@ -56,6 +56,7 @@ vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
 --vim.g.mkdp_browser='firefox'
 --vim.g.mkdp_auto_open=1
 --vim.g.mkdp_auto_close=0
+-- vim.g.neoterm_repl_python='ipython'
 
 
 -- Auto close TODO: Get this to work

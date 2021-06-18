@@ -3,7 +3,7 @@ local iron = require('iron')
 iron.core.add_repl_definitions {
   python = {
     python_connect= {
-      command = {"rightbelow 20 split", vim.api.nvim_buf_get_option(0, "ft"),"ipython", "repl", ":connect"}
+    command = {"split", vim.api.nvim_buf_get_option(0, "ft"),"ipython", "repl", ":connect"}
     }
   },
   clojure = {
@@ -14,8 +14,11 @@ iron.core.add_repl_definitions {
 }
 
 iron.core.set_config {
+  repl_open_cmd = 'rightbelow 100 vsplit',
   preferred = {
     python = "ipython",
     clojure = "lein"
   }
 }
+
+

@@ -97,6 +97,10 @@ return require('packer').startup(function()
     -- REPL
     use 'hkupty/iron.nvim'
     -- use 'kassio/neoterm'
+    -- NOTE on neoterm -> actually this looks like the better tool for my use
+    -- case, but I could not get to work, that I can send a function (multiline)
+    -- and it is evaluated straight away (like I achieved in vimteractive with the
+    -- extra code) 
 
     -- matlab
     use 'rahlir/nvim-matlab'

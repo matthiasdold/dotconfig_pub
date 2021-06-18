@@ -1,6 +1,8 @@
 " Configurations not in lua but vimscript for various reasons
 " This is sourced from unit.lua"
 
+	
+
 "----------------------------------------------------------
 "-- Custom highlighting
 "----------------------------------------------------------
@@ -27,6 +29,24 @@ endif
 "----------------------------------------------------------
 "-- nicer execution of python files -> TODO: to lua?
 "----------------------------------------------------------
+" neoterm -> not load compatebility as script is vimscript
+"	set nocompatible ---> NOTE I had to get rid of this for the lua/vimscript setup to work
+" filetype off
+" 
+" let &runtimepath.=',$HOME.local/share/nvim/site/pack/packer/start/neoterm'
+" 
+" filetype plugin on
+"
+" let g:neoterm_repl_enable_ipython_paste_magic = 1
+" let g:neoterm_bracketed_paste = 1
+" let g:neoterm_default_mod = "vertical"
+" let g:neoterm_repl_python = ["svenv", "clear", "ipython --no-autoindent"]
+
+" SUPER IMPORTANT NOTE: --> these remaps did not work in the lua at all! Same as for iron,
+" If time allows, investigate and understand why this is screwed up
+" vnoremap <C-s> :TREPLSendSelection<CR>
+" nnoremap <C-s> :TREPLSendLine<CR>
+
 
 " Trying to fix iron
 " NOTE: This is super interesting, that the following keymap from lua does not work
@@ -34,3 +54,4 @@ endif
 "
 " This might explain other non working keymaps as well --> investigate if time allows
 vnoremap <C-s> :lua require("iron").core.visual_send()<CR>
+nnoremap <C-s> :lua require("iron").core.send_line()<CR>
