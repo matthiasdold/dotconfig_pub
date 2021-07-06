@@ -2,7 +2,6 @@
 -- this config
 local execute = vim.api.nvim_command local fn = vim.fn
 
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -12,7 +11,7 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
     use {'wbthomason/packer.nvim', opt = true}
     -- Asynchroneous jobs
@@ -59,8 +58,8 @@ return require('packer').startup(function()
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
     -- Note: christians pack includes nord, which we use
-    use 'christianchiarulli/nvcode-color-schemes.vim'
-    -- use {'arcticicestudio/nord-vim'}
+    -- use 'christianchiarulli/nvcode-color-schemes.vim'
+    use {'arcticicestudio/nord-vim'}
     use 'sainnhe/sonokai'
     use 'sainnhe/forest-night'
     use 'tyrannicaltoucan/vim-deep-space'

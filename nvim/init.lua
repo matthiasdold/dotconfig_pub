@@ -9,10 +9,12 @@
 
 -- Use the vimscript stuff here first, as the neoterm needs to happen
 -- before syntax on
-vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
--- General imports
-require('colorscheme')
 require('plugins') --lua/plugins.lua
+
+vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
+require('colorscheme')
+
+-- General imports
 require('globals')
 require('settings')
 require('utils')
@@ -33,7 +35,7 @@ require('c_startify')
 -- Others
 -- require('c_vim_rooter')
 require('c_ulti_snippets')
-require('c_telescope')
+-- require('c_telescope')
 
 -- LSP --> trying to do this with CoC now
 -- require('lspconfig')
