@@ -11,7 +11,6 @@
 -- before syntax on
 require('plugins') --lua/plugins.lua
 
-vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 require('colorscheme')
 
 -- General imports
@@ -31,6 +30,11 @@ require('c_iron')
 -- require('neoterm')
 require('c_gitsigns')
 require('c_startify')
+require('c_nvimtree')
+
+-- Neogit offers some nice functionality, but slows nvim down considerably
+-- TODO: Try fugitive again
+-- require('c_neogit')           // testging if this is what makes nvim slow
 
 -- Others
 -- require('c_vim_rooter')
@@ -48,5 +52,6 @@ require('lspkind')
 
 -- require('keymappings')
 -- Vimscript based configs
+vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')
 vim.cmd [[source $HOME/.config/nvim/vim/coc.vim]]
 vim.cmd [[source $HOME/.config/nvim/vim/vim_matlab.vim]]

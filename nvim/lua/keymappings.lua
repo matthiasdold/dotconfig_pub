@@ -16,6 +16,10 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
 
+-- faster movement in code from homerow
+vim.api.nvim_set_keymap('n', 'L', 'w', { silent = true })
+vim.api.nvim_set_keymap('n', 'H', 'b', { silent = true })
+
 -- coding with german keyboard
 vim.api.nvim_set_keymap('i', '<C-h>', '[', { silent = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<C-l>', ']', { silent = true, noremap = true})
@@ -61,8 +65,8 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = 
 -- interesting fact, I could not get this to work with 'bash'
 -- TODO: Think about how to derive the currently used venv -> not having svenv statically
 vim.o.shell="fish"
-vim.api.nvim_set_keymap('n', '<C-x>', ":term svenv; python %<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<S-P>', ":term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-x>', ":vsplit :term svenv; python %<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-P>', ":vsplit :term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'fj', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 

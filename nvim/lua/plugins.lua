@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
     use {"windwp/nvim-ts-autotag", opt = true}
-    use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+    use {'lukas-reineke/indent-blankline.nvim'}
 
     -- statusline
     use {
@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 
     -- Finding files
     -- use {"nvim-lua/popup.nvim", opt = true}
-    -- use {"nvim-lua/plenary.nvim", opt = true}
+    use {"nvim-lua/plenary.nvim"}
     -- use {"nvim-telescope/telescope.nvim", opt = true}
     -- use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {
@@ -120,9 +120,15 @@ return require('packer').startup(function(use)
     -- Nicer python indentation
     use 'Vimjas/vim-python-pep8-indent'
 
+    -- Git integration
+    -- use 'tpope/vim-fugitive'
+    --use {'TimUntersberger/neogit',
+    --    requires = {
+    --        'nvim-lua/plenary.nvim'},
+    --}
+
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
-
  
 end)
 

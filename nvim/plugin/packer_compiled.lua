@@ -7,7 +7,7 @@ end
 
 vim.api.nvim_command('packadd packer.nvim')
 
-local no_errors = pcall(function()
+local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
@@ -93,6 +93,10 @@ _G.packer_plugins = {
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["iron.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/iron.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -240,10 +244,18 @@ time([[Config for galaxyline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+if vim.fn.exists(":Make") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
+if vim.fn.exists(":Focus") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
+if vim.fn.exists(":Dispatch") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
+if vim.fn.exists(":Start") ~= 2 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end
@@ -251,5 +263,5 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

@@ -1,14 +1,20 @@
 " Configurations not in lua but vimscript for various reasons
 " This is sourced from unit.lua"
 
-	
+highlight ColorColumn guibg=#19191f
+set cc=80
 
 "----------------------------------------------------------
 "-- Custom highlighting
 "----------------------------------------------------------
-syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?"""+ end=+"""+ keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
-syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?'''+ end=+'''+ keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
-hi def link pythonDocstring pythonComment
+syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?"""+ end=+"""+ 
+syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?'''+ end=+'''+ 
+" keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
+hi def link pythonDocstring pythonTSComment 
+" --> The above does not work. I should probably tweek a query / .scm file
+" For treesitter directly to identify the """<something>""" as a docstring
+" Queries are located at ~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/queries/
+
 
 "----------------------------------------------------------
 "-- Removing trailing whitespace on save -> TODO: to lua?
