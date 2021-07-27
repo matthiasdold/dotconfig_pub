@@ -65,8 +65,8 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = 
 -- interesting fact, I could not get this to work with 'bash'
 -- TODO: Think about how to derive the currently used venv -> not having svenv statically
 vim.o.shell="fish"
-vim.api.nvim_set_keymap('n', '<C-x>', ":vsplit :term svenv; python %<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<S-P>', ":vsplit :term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-x>', ":vsplit| :term svenv; python %<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<S-P>', ":vsplit| :term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'fj', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 
