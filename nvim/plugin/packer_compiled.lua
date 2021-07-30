@@ -206,10 +206,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/doda/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
   },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-polyglot"
-  },
   ["vim-python-pep8-indent"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent"
@@ -244,18 +240,10 @@ time([[Config for galaxyline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-if vim.fn.exists(":Make") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
-if vim.fn.exists(":Focus") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
-if vim.fn.exists(":Dispatch") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
-if vim.fn.exists(":Start") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end

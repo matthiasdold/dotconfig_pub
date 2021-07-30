@@ -28,7 +28,7 @@ require('barbar')
 require('autopairs')
 require('c_iron')
 -- require('neoterm')
-require('c_gitsigns')
+-- require('c_gitsigns')
 require('c_startify')
 require('c_nvimtree')
 

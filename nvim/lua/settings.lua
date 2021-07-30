@@ -58,6 +58,8 @@ vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
 --vim.g.mkdp_auto_close=0
 -- vim.g.neoterm_repl_python='ipython'
 
+vim.g.rooter_manual_only = true    -- no auto rooting to .git / etc
+
 
 -- Auto close TODO: Get this to work
 -- vim.cmd('autocmd VimLeave * :!deactivate_node')

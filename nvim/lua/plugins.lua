@@ -69,7 +69,9 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
 
     -- Advanced syntax higlighting
-    use 'sheerun/vim-polyglot'
+    -- use 'sheerun/vim-polyglot' try to disable / potential issues with
+    -- treesitter???
+    -- definitely faster without
 
     -- Debugger
     use {'mfussenegger/nvim-dap'}
