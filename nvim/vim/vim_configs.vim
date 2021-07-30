@@ -2,6 +2,7 @@
 " This is sourced from unit.lua"
 
 highlight ColorColumn guibg=#19191f
+highlight Folded guibg=#39393f guifg=#81a1c1 gui=None
 set cc=80
 
 "----------------------------------------------------------

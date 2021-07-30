@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  SimpylFold = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/SimpylFold"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -221,6 +225,10 @@ _G.packer_plugins = {
   ["vim-startify"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
   },
   ["vim-vsnip"] = {
     loaded = true,

@@ -129,6 +129,13 @@ return require('packer').startup(function(use)
     --        'nvim-lua/plenary.nvim'},
     --}
 
+    -- Multi coursor: https://github.com/mg979/vim-visual-multi/wiki/Quick-start
+    use 'mg979/vim-visual-multi'
+
+    -- Improved folding for python
+    use 'tmhedberg/SimpylFold'
+
+
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
  
