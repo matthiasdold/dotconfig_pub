@@ -55,7 +55,6 @@ endif
 " vnoremap <C-s> :TREPLSendSelection<CR>
 " nnoremap <C-s> :TREPLSendLine<CR>
 
-
 " Trying to fix iron
 " NOTE: This is super interesting, that the following keymap from lua does not work
 " vim.api.nvim_set_keymap('v', '<C-s>', '<Cmd>lua require("iron").core.visual_send()<CR>', { noremap = true})
