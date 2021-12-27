@@ -81,18 +81,21 @@ return require('packer').startup(function(use)
 
     -- Autocompletion
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-cmdline'
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/nvim-cmp" -- The completion plugin
 
+    use {'hrsh7th/cmp-vsnip'}
     use {'hrsh7th/vim-vsnip'}
     use {'hrsh7th/vim-vsnip-integ'}
     use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
     use {'SirVer/ultisnips'}
+    use "quangnguyen30192/cmp-nvim-ultisnips"
 
     -- General various
     use {'windwp/nvim-autopairs'}
@@ -107,13 +110,6 @@ return require('packer').startup(function(use)
 
     -- matlab
     use 'rahlir/nvim-matlab'
-
-    -- Gitsigns next to numbers
-    use {
-      'lewis6991/gitsigns.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim'},
-    }
 
     -- startify
     use 'mhinz/vim-startify'
