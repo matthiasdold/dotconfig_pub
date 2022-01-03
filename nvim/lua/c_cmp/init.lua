@@ -4,7 +4,6 @@ if not cmp_status_ok then
   return
 end
 
-
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -40,6 +39,11 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- Some custom colors
+-- NOTE: It needs to be defined for CmpItemKindDefault not CmpItemKind
+vim.cmd('hi CmpItemKindDefault guifg=#5e81ac')
+vim.cmd('hi CmpItemAbbrMatch gui=bold guifg=#a3be8c')
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -48,7 +52,7 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+	["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),

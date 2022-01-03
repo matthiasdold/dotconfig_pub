@@ -44,6 +44,8 @@ require('c_ulti_snippets')
 -- Completion and LSP
 require('lsp')
 
+
+
 -- require('lsp.python-ls')
 -- Vimscript based configs
 vim.cmd('source $HOME/.config/nvim/vim/vim_configs.vim')

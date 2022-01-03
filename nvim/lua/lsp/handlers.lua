@@ -1,5 +1,42 @@
 local M = {}
 
+
+-- Icons Check how they interact with CMPs icons
+-- NOTE: Boarders Icons etc are usde from cmp
+
+-- got in split window
+local function goto_definition(split_cmd)
+  local util = vim.lsp.util
+  local log = require("vim.lsp.log")
+  local api = vim.api
+
+  -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+  local handler = function(_, result, ctx)
+    if result == nil or vim.tbl_isempty(result) then
+      local _ = log.info() and log.info(ctx.method, "No location found")
+      return nil
+    end
+
+    if split_cmd then
+      vim.cmd("vsplit")
+    end
+
+    if vim.tbl_islist(result) then
+      util.jump_to_location(result[1])
+
+      if #result > 1 then
+        util.set_qflist(util.locations_to_items(result))
+        api.nvim_command("copen")
+        api.nvim_command("wincmd p")
+      end
+    else
+      util.jump_to_location(result)
+    end
+  end
+
+  return handler
+end
+
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
@@ -12,6 +49,7 @@ M.setup = function()
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
+
 
   local config = {
     -- disable virtual text
@@ -42,6 +80,9 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
   border = "rounded",
 })
+
+vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+
 end
 
 local function lsp_highlight_document(client)
@@ -71,7 +112,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "T", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(
     bufnr,
     "n",
@@ -79,7 +120,7 @@ local function lsp_keymaps(bufnr)
     '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
     opts
   )
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "t", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
