@@ -1,0 +1,27 @@
+format="""
+╭$directory$git_branch$git_metrics$git_status$python$nodejs$rust$jobs$time
+╰$character$status
+"""
+# Note rounded border chars found on https://www.aestheticsymbols.me/borders.html
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[character]                            # The name of the module we are configuring is "character"
+vicmd_symbol = "[V](bold blue) "
+
+[python]
+symbol = "[](green)"
+style = "bold green"
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+symbol = ""
+style = "bold #558855"
+
+[git_status]
+stashed = "[](blue)"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+format = '([$all_status$ahead_behind]($style) )'

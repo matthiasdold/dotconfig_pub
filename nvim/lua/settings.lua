@@ -49,7 +49,7 @@ vim.o.hidden=true				-- To be able to move out of a modified buffer without writ
 
 vim.g.asyncomplete_auto_completeopt = 0
 -- vim.o.completeopt="menuone,noinsert,noselect"
-vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.9'
+vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.10'
 vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
 -- For markdown preview, not creating a separate folder
 -- TOOD: get this working

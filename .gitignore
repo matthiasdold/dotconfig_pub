@@ -12,6 +12,7 @@
 !fish/
 !git/*
 !*.fish
+!starship.toml
 *pycache*
 
 

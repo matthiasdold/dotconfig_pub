@@ -3,6 +3,7 @@
 
 highlight ColorColumn guibg=#19191f
 highlight Folded guibg=#39393f guifg=#81a1c1 gui=None
+highlight Comment gui=italic					
 set cc=80
 
 "----------------------------------------------------------

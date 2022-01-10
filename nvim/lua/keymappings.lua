@@ -5,6 +5,9 @@ vim.g.maplocalleader=','
 -- quick save
 vim.api.nvim_set_keymap('n', '<localleader>w', ':w<CR>', { noremap = true, silent = true })
 
+-- highlighting
+vim.api.nvim_set_keymap('n', 'nl', ':noh', { noremap = true, silent = true })
+
 -- explorer
 vim.api.nvim_set_keymap('n', '<localleader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 

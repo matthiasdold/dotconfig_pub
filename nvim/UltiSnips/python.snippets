@@ -9,6 +9,46 @@ snippet #md "My python header"
 
 endsnippet	
 
+
+
+snippet #mdp "My python header for pipelines"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# author: Matthias Dold
+# date: `date +%Y%m%d`
+#
+# ${1:Summary}
+
+from fire import Fire
+from xileh.core.pipelinedata import xPData
+from xileh.core.pipeline import xPipeline
+
+
+# ==============================================================================
+# Functions
+# ==============================================================================
+
+
+# ==============================================================================
+# Pipelines
+# ==============================================================================
+
+
+# ==============================================================================
+# CLI
+# ==============================================================================
+def main():
+    return 0
+
+
+if __name__ == '__main__':
+    Fire(main)
+
+endsnippet	
+
+
+
 #! header
 snippet #! "#!/usr/bin/env python" b
 #!/usr/bin/env python
