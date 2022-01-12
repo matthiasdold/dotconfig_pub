@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -71,172 +71,244 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   SimpylFold = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/SimpylFold"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/SimpylFold",
+    url = "https://github.com/tmhedberg/SimpylFold"
   },
   ["barbar.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
   },
-  ["coc.nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/coc.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["forest-night"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night",
+    url = "https://github.com/sainnhe/forest-night"
   },
   ["galaxyline.nvim"] = {
     config = { "\27LJ\1\2*\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\15galaxyline\frequire\0" },
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/galaxyline.nvim",
+    url = "https://github.com/glepnir/galaxyline.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["iron.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/iron.nvim"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/iron.nvim",
+    url = "https://github.com/hkupty/iron.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["nord-vim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nord-vim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-dap"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-matlab"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-matlab"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-matlab",
+    url = "https://github.com/rahlir/nvim-matlab"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/playground"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   sonokai = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/sonokai"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tender.vim"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/tender.vim"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
   },
   ultisnips = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/ultisnips"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-deep-space"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-deep-space"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-deep-space",
+    url = "https://github.com/tyrannicaltoucan/vim-deep-space"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
     loaded = false,
     needs_bufread = false,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/vim-dispatch"
+    only_cond = false,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
   },
   ["vim-python-pep8-indent"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
+    url = "https://github.com/Vimjas/vim-python-pep8-indent"
   },
   ["vim-rooter"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-rooter"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-rooter",
+    url = "https://github.com/airblade/vim-rooter"
   },
   ["vim-snippets"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-snippets"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-startify"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-startify"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-visual-multi"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 
@@ -248,10 +320,10 @@ time([[Config for galaxyline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end

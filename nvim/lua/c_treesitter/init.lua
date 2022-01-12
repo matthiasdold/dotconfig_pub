@@ -6,6 +6,9 @@ require'nvim-treesitter.configs'.setup {
     },]]
     -- additional_vim_regex_highlighting = true,   -- get back user specific definitions (python docstrings in my case)
   },
+  context_commenting = {
+	enable = true,
+  }
   --[[refactor = {
       highlight_definitions = {
         enable = true

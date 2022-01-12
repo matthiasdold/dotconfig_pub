@@ -16,6 +16,9 @@ vim.cmd('let g:nord_italic_comments=1')
 vim.cmd('hi LineNr ctermbg=NONE guibg=NONE')
 vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
 vim.cmd('hi SignColumn ctermbg=NONE guibg=NONE')
+vim.cmd('hi NormalFloat ctermbg=NONE guibg=NONE')
+vim.cmd('hi FloatBorder ctermbg=NONE guibg=NONE')
+vim.cmd('hi Pmenu ctermbg=NONE guibg=NONE')
 
 -- Python docstrings same as comments
 -- O is the global options object
@@ -40,6 +43,7 @@ vim.cmd('hi BufferCurrentMod guibg=' .. bbcolors.current_modified_bg .. ' guifg=
 -- vim.cmd('hi BufferCurrentSign guibg=' .. bbcolors.current_sign_bg .. ' guifg=' .. bbcolors.current_sign_fg)
 vim.cmd('hi link BufferCurrentIcon BufferCurrent')
 vim.cmd('hi link BufferCurrentSign BufferCurrent')
+
 
 
 -- LSP saga

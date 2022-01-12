@@ -3,6 +3,7 @@
 
 highlight ColorColumn guibg=#19191f
 highlight Folded guibg=#39393f guifg=#81a1c1 gui=None
+highlight Comment gui=italic					
 set cc=80
 
 "----------------------------------------------------------
@@ -53,7 +54,6 @@ endif
 " If time allows, investigate and understand why this is screwed up
 " vnoremap <C-s> :TREPLSendSelection<CR>
 " nnoremap <C-s> :TREPLSendLine<CR>
-
 
 " Trying to fix iron
 " NOTE: This is super interesting, that the following keymap from lua does not work

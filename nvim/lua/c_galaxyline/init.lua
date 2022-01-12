@@ -40,9 +40,9 @@ local buffer_not_empty = function()
 end
 
 local function lsp_status(status)
-    shorter_stat = ''
+    local shorter_stat = ''
     for match in string.gmatch(status, "[^%s]+")  do
-        err_warn = string.find(match, "^[WE]%d+", 0)
+        local err_warn = string.find(match, "^[WE]%d+", 0)
         if not err_warn then
             shorter_stat = shorter_stat .. ' ' .. match
         end
@@ -252,7 +252,7 @@ gls.left[13] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
     icon = '   ',
-    highlight = {colors.nord_orange,colors.bg},
+    highlight = {colors.nord_green, colors.bg},
   }
 }
 
@@ -331,7 +331,7 @@ gls.right[6] = {
 
 gls.short_line_left[1] = {
   LeftEnd = {
-    provider = function() return ' ' end,
+    provider = function() return ' > ' end,
     separator = ' ',
     separator_highlight = {colors.nord_blue,colors.bg},
     highlight = {colors.nord_blue,colors.bg}

@@ -20,10 +20,9 @@ return require('packer').startup(function(use)
     use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
     -- Better syntax higlighting
-    -- Post-install/update hook with neovim command
-    -- NOTE: Hook did not work for me, I had to run manually
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'    -- nice way of commenting in different languages -> usig <g-c-c> key combo
     use {"windwp/nvim-ts-autotag", opt = true}
     use {'lukas-reineke/indent-blankline.nvim'}
 
@@ -35,10 +34,7 @@ return require('packer').startup(function(use)
     }
 
     -- Finding files
-    -- use {"nvim-lua/popup.nvim", opt = true}
     use {"nvim-lua/plenary.nvim"}
-    -- use {"nvim-telescope/telescope.nvim", opt = true}
-    -- use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -52,13 +48,12 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
 
     -- nerd tree but nicer
+    -- Actually a bit slow -> maybe replace
     use 'kyazdani42/nvim-tree.lua'
 
     -- Colorshemes
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
-    -- Note: christians pack includes nord, which we use
-    -- use 'christianchiarulli/nvcode-color-schemes.vim'
     use {'arcticicestudio/nord-vim'}
     use 'sainnhe/sonokai'
     use 'sainnhe/forest-night'
@@ -77,20 +72,30 @@ return require('packer').startup(function(use)
     use {'mfussenegger/nvim-dap'}
 
     -- LSPs
-    use {'neovim/nvim-lspconfig'}
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "jose-elias-alvarez/null-ls.nvim"  -- looks usefull
+
     use 'glepnir/lspsaga.nvim'
-    use {'onsails/lspkind-nvim'}
-    use 'kabouzeid/nvim-lspinstall' -- nice :LspInstall functionality
-    -- use 'nvim-lua/completion-nvim'
-    use 'neoclide/coc.nvim'
+    -- use {'onsails/lspkind-nvim'}
 
     -- Autocompletion
-    use {'hrsh7th/nvim-compe'}
+    -- cmp plugins
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-cmdline'
+    use "hrsh7th/cmp-buffer" -- buffer completions
+    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/cmp-cmdline" -- cmdline completions
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "hrsh7th/nvim-cmp" -- The completion plugin
+
+    use {'hrsh7th/cmp-vsnip'}
     use {'hrsh7th/vim-vsnip'}
     use {'hrsh7th/vim-vsnip-integ'}
     use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
     use {'SirVer/ultisnips'}
+    use "quangnguyen30192/cmp-nvim-ultisnips"
 
     -- General various
     use {'windwp/nvim-autopairs'}
@@ -106,13 +111,6 @@ return require('packer').startup(function(use)
     -- matlab
     use 'rahlir/nvim-matlab'
 
-    -- Gitsigns next to numbers
-    use {
-      'lewis6991/gitsigns.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim'},
-    }
-
     -- startify
     use 'mhinz/vim-startify'
 
@@ -122,19 +120,11 @@ return require('packer').startup(function(use)
     -- Nicer python indentation
     use 'Vimjas/vim-python-pep8-indent'
 
-    -- Git integration
-    -- use 'tpope/vim-fugitive'
-    --use {'TimUntersberger/neogit',
-    --    requires = {
-    --        'nvim-lua/plenary.nvim'},
-    --}
-
     -- Multi coursor: https://github.com/mg979/vim-visual-multi/wiki/Quick-start
     use 'mg979/vim-visual-multi'
 
     -- Improved folding for python
     use 'tmhedberg/SimpylFold'
-
 
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
