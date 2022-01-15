@@ -50,21 +50,21 @@ local function lsp_status(status)
     return shorter_stat
 end
 
-
-local function get_coc_lsp()
-  local status = vim.fn['coc#status']()
-  if not status or status == '' then
-      return ''
-  end
-  return lsp_status(status)
-end
-
-function get_diagnostic_info()
-  if vim.fn.exists('*coc#rpc#start_server') == 1 then
-    return get_coc_lsp()
-    end
-  return ''
-end
+---a
+---alocal function get_coc_lsp()
+---a  local status = vim.fn['coc#status']()
+---a  if not status or status == '' then
+---a      return ''
+---a  end
+---a  return lsp_status(status)
+---aend
+---a
+---afunction get_diagnostic_info()
+---a  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+---a    return get_coc_lsp()
+---a    end
+---a  return ''
+---aend
 
 local function get_current_func()
   local has_func, func_name = pcall(vim.fn.nvim_buf_get_var,0,'coc_current_function')
@@ -72,12 +72,12 @@ local function get_current_func()
       return func_name
   end
 
-function get_function_info()
-  if vim.fn.exists('*coc#rpc#start_server') == 1 then
-    return get_current_func()
-    end
-  return ''
-end
+--function get_function_info()
+--  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+--    return get_current_func()
+--    end
+--  return ''
+--end
 
 local function trailing_whitespace()
     local trail = vim.fn.search("\\s$", "nw")
@@ -88,8 +88,8 @@ local function trailing_whitespace()
     end
 end
 
-CocStatus = get_diagnostic_info
-CocFunc = get_current_func
+--CocStatus = get_diagnostic_info
+--CocFunc = get_current_func
 TrailingWhiteSpace = trailing_whitespace
 
 function has_file_type()
@@ -222,39 +222,39 @@ gls.left[8] = {
     highlight = {colors.nord_magenta,colors.bg}
   }
 }
-gls.left[9] = {
-  DiagnosticError = {
-    provider = 'DiagnosticError',
-    icon = '  ',
-    highlight = {colors.nord_red,colors.bg}
-  }
-}
-gls.left[10] = {
-  Space = {
-    provider = function () return '' end
-  }
-}
-gls.left[11] = {
-  DiagnosticWarn = {
-    provider = 'DiagnosticWarn',
-    icon = '  ',
-    highlight = {colors.nord_yellow,colors.bg},
-  }
-}
-gls.left[12] = {
-  DiagnosticHint = {
-    provider = 'DiagnosticHint',
-    icon = '   ',
-    highlight = {colors.nord_blue,colors.bg},
-  }
-}
-gls.left[13] = {
-  DiagnosticInfo = {
-    provider = 'DiagnosticInfo',
-    icon = '   ',
-    highlight = {colors.nord_green, colors.bg},
-  }
-}
+--gls.left[9] = {
+--  DiagnosticError = {
+--    provider = 'DiagnosticError',
+--    icon = '  ',
+--    highlight = {colors.nord_red,colors.bg}
+--  }
+--}
+--gls.left[10] = {
+--  Space = {
+--    provider = function () return '' end
+--  }
+--}
+--gls.left[11] = {
+--  DiagnosticWarn = {
+--    provider = 'DiagnosticWarn',
+--    icon = '  ',
+--    highlight = {colors.nord_yellow,colors.bg},
+--  }
+--}
+--gls.left[12] = {
+--  DiagnosticHint = {
+--    provider = 'DiagnosticHint',
+--    icon = '   ',
+--    highlight = {colors.nord_blue,colors.bg},
+--  }
+--}
+--gls.left[13] = {
+--  DiagnosticInfo = {
+--    provider = 'DiagnosticInfo',
+--    icon = '   ',
+--    highlight = {colors.nord_green, colors.bg},
+--  }
+--}
 
 --[[
 gls.right[1] = {

@@ -9,6 +9,7 @@
 
 -- Use the vimscript stuff here first, as the neoterm needs to happen
 -- before syntax on
+
 require('plugins') --lua/plugins.lua
 
 
@@ -35,6 +36,7 @@ require('c_nvimtree')
 -- Neogit offers some nice functionality, but slows nvim down considerably
 -- TODO: Try fugitive again
 -- require('c_neogit')           // testging if this is what makes nvim slow
+
 
 -- Others
 -- require('c_vim_rooter')
