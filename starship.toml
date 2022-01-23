@@ -1,8 +1,8 @@
 format="""
 ╭[](fg:#3b4252)\
-$directory[](fg:#3b4252 bg:#888888)\
+$directory[](fg:#3b4252 bg:#aaaaaa)\
 $git_branch$git_metrics$git_status$git_commit$git_state\
-[](fg:#888888)$jobs $cmd_duration
+[](fg:#aaaaaa)$jobs $cmd_duration
 ╰$character$status$battery
 """
 
@@ -26,7 +26,7 @@ style = "bold green"
 [git_branch]
 format = "[$symbol$branch]($style)"
 symbol = " "
-style = "fg:#222222 bg:#888888"
+style = "fg:#222222 bg:#aaaaaa"
 
 # [git_status]
 # stashed = "[](blue)"
@@ -43,25 +43,23 @@ home_symbol = ""
 read_only_style = "fg:red"
 read_only = "  "
 style = "bg:#3b4252"
-use_os_path_sep = true
 format = "[$path]($style)[$read_only]($read_only_style)[ ]($style)"
 
 
 [git_status]
 format = '[ $all_status$ahead_behind]($style)'
-bg="bg:#888888"
-style = "bold bg:#888888"
+style = "bold bg:#aaaaaa"
 conflicted = "[](red) "
-up_to_date = "[](bold fg:#55ff55 bg:#888888) "
-untracked = "[](bold fg:#ffbb00 bg:#888888) "
-ahead = "⇡${count}"
+up_to_date = "[](bold fg:#55ff55 bg:#aaaaaa) "
+untracked = "[](bold fg:#ffbb00 bg:#aaaaaa) "
+ahead = "⇡${count}(bold #ffbb00)"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "[⇣${count}](red)"
-stashed = "[](bold fg:blue bg:#888888)"
-modified = "[](bold fg:#f6f600 bg:#888888) "
-staged = '[++\($count\)](bold fg:green bg:#888888)'
-renamed = "[襁](bold fg:blue bg:#888888)"
-deleted = "[](bold fg:red bg:#888888) "
+stashed = "[](bold fg:blue bg:#aaaaaa)"
+modified = "[](bold fg:#f6f600 bg:#aaaaaa) "
+staged = '[++\($count\) ](bold fg:#4444aa bg:#aaaaaa)'
+renamed = "[襁](bold fg:blue bg:#aaaaaa)"
+deleted = "[](bold fg:red bg:#aaaaaa) "
 
 [jobs]
 symbol = " 酪"
@@ -69,6 +67,6 @@ style = "bold fg:#ffbb00"
 number_threshold = 1
 
 [battery]
-dischargin_symbol="ﮊ"
+discharging_symbol="ﮊ"
 [[battery.display]]
 style = "bold red"

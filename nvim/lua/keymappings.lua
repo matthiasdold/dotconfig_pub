@@ -38,9 +38,9 @@ vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 
 
--- Tab switch buffer
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
+-- Tab switch buffer --> specified in barbar
+--vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
 
 -- better indenting
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
