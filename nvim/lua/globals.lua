@@ -48,6 +48,8 @@ O = {
     }
 }
 
+luasnip = require('luasnip')
+
 DATA_PATH = vim.fn.stdpath('data')
 print(DATA_PATH)
 CACHE_PATH = vim.fn.stdpath('cache')

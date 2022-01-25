@@ -18,7 +18,7 @@ vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
 vim.cmd('hi SignColumn ctermbg=NONE guibg=NONE')
 vim.cmd('hi NormalFloat ctermbg=NONE guibg=NONE')
 vim.cmd('hi FloatBorder ctermbg=NONE guibg=NONE')
-vim.cmd('hi Pmenu ctermbg=NONE guibg=NONE')
+vim.cmd('hi Pmenu ctermbg=NONE guibg=#252538')
 
 -- Python docstrings same as comments
 -- O is the global options object
@@ -36,6 +36,7 @@ local bbcolors = {
     current_index_bg = '#5e81ac',
     current_index_fg = '#000'
 }
+
 
 vim.cmd('hi BufferCurrent guibg=' .. bbcolors.current_bg .. ' guifg=' .. bbcolors.current_fg)
 vim.cmd('hi BufferCurrentIndex guibg=' .. bbcolors.current_index_bg .. ' guifg=' .. bbcolors.current_index_fg)

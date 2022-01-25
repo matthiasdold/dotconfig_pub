@@ -2,6 +2,7 @@
 -- this config
 local execute = vim.api.nvim_command local fn = vim.fn
 
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -22,15 +23,20 @@ return require('packer').startup(function(use)
     -- Better syntax higlighting
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'    -- nice way of commenting in different languages -> usig <g-c-c> key combo
+    -- use 'JoosepAlviste/nvim-ts-context-commentstring'    -- nice way of commenting in different languages -> usig <g-c-c> key combo
+    use { 'numToStr/Comment.nvim' }
     use {"windwp/nvim-ts-autotag", opt = true}
     use {'lukas-reineke/indent-blankline.nvim'}
 
     -- statusline
+    -- use {
+    --     'glepnir/galaxyline.nvim',
+    --     branch = 'main',
+    --     config = function() require'galaxyline' end,
+    -- }
     use {
-        'glepnir/galaxyline.nvim',
-	branch = 'main',
-	config = function() require'galaxyline' end,
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
     -- Finding files
@@ -82,7 +88,6 @@ return require('packer').startup(function(use)
     -- Autocompletion
     -- cmp plugins
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-cmdline'
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -96,6 +101,7 @@ return require('packer').startup(function(use)
     -- use {'cstrap/python-snippets'}
     use {'SirVer/ultisnips'}
     use "quangnguyen30192/cmp-nvim-ultisnips"
+    use { 'L3MON4D3/LuaSnip' }
 
     -- General various
     use {'windwp/nvim-autopairs'}

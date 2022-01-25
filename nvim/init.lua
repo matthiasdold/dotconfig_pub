@@ -12,7 +12,6 @@
 
 require('plugins') --lua/plugins.lua
 
-
 require('colorscheme')
 
 -- General imports
@@ -22,7 +21,8 @@ require('utils')
 require('keymappings')
 require('c_cmp')
 
-require('c_galaxyline')
+--require('c_galaxyline')
+require('c_lualine')
 require('c_treesitter')
 require('c_colorizer')
 require('barbar')
@@ -37,15 +37,18 @@ require('c_nvimtree')
 -- TODO: Try fugitive again
 -- require('c_neogit')           // testging if this is what makes nvim slow
 
+-- Commenting
+require('c_comment')
+
 
 -- Others
 -- require('c_vim_rooter')
 require('c_ulti_snippets')
+require('luasnip')
 -- require('c_telescope')
 
 -- Completion and LSP
 require('lsp')
-
 
 
 -- require('lsp.python-ls')
