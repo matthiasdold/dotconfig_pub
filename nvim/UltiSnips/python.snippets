@@ -21,8 +21,7 @@ snippet #mdp "My python header for pipelines"
 # ${1:Summary}
 
 from fire import Fire
-from xileh.core.pipelinedata import xPData
-from xileh.core.pipeline import xPipeline
+from xileh import xPData, xPipeline
 
 
 # ==============================================================================
@@ -33,12 +32,15 @@ from xileh.core.pipeline import xPipeline
 # ==============================================================================
 # Pipelines
 # ==============================================================================
+pl = xPipeline("${2:my_description}", log_eval=False)
 
 
 # ==============================================================================
 # CLI
 # ==============================================================================
 def main():
+
+    pdata = xPData([], name="${3:my_container}")
     return 0
 
 

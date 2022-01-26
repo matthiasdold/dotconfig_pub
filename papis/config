@@ -4,4 +4,5 @@ opentool = okular
 
 [settings]
 default-library = papers
+editor = nvim
 

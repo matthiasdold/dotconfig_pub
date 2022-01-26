@@ -134,6 +134,7 @@ return require('packer').startup(function(use)
 
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
+
  
 end)
 
