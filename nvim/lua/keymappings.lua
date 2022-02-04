@@ -32,10 +32,10 @@ vim.api.nvim_set_keymap('i', '<C-g>', '}', { silent = true, noremap = true })
 --vim.api.nvim_set_keymap('i', '[', '[]<left>', { silent = true, noremap = true })
 
 -- Resize window
-vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -10<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +10<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -10<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +10<CR>', { noremap = true, silent = true })
 
 
 -- Tab switch buffer --> specified in barbar
@@ -72,10 +72,10 @@ vim.api.nvim_set_keymap('n', '<C-x>', ":vsplit| :term svenv; python %<CR>", {nor
 vim.api.nvim_set_keymap('n', '<S-P>', ":vsplit| :term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
 
 -- Telescope
-vim.api.nvim_set_keymap('n', 'fj', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true}) 
-vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true}) 
-vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true}) 
-vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true}) 
+vim.api.nvim_set_keymap('n', 'fj', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 
 -- Markdown - not working: TODO - get this up
 -- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })

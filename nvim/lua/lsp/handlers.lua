@@ -81,7 +81,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
-vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+vim.lsp.handlers["textDocument/definition"] = goto_definition() --'split')
 
 end
 

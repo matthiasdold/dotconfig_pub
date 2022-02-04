@@ -33,6 +33,10 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+"----------------------------------------------------------
+"-- for journaling TODO: to lua?
+"----------------------------------------------------------
+autocmd BufWritePost 0_combined_journal.md :! bass /home/doda/Documents/journal/sync_back_todos.sh
 
 "----------------------------------------------------------
 "-- nicer execution of python files -> TODO: to lua?
