@@ -1,12 +1,12 @@
 format="""
-╭[](fg:#3b4252)\
-$directory[](fg:#3b4252 bg:#aaaaaa)\
+╭[](fg:#2e3440)\
+$directory[](fg:#2e3440 bg:#4c566a)\
 $git_branch$git_metrics$git_status$git_commit$git_state\
-[](fg:#aaaaaa)$jobs $cmd_duration
+[](fg:#4c566a)$jobs $cmd_duration
 ╰$character$status$battery
 """
 
-right_format="$python$nodejs$rust"
+right_format="$time$python$nodejs$rust"
 # 
 # ╭$directory$git_branch$git_metrics$git_status$python$nodejs$rust$jobs$time
 # Note rounded border chars found on https://www.aestheticsymbols.me/borders.html
@@ -26,7 +26,7 @@ style = "bold green"
 [git_branch]
 format = "[$symbol$branch]($style)"
 symbol = " "
-style = "fg:#222222 bg:#aaaaaa"
+style = "fg:#7eb1ac bg:#4c566a"
 
 # [git_status]
 # stashed = "[](blue)"
@@ -40,26 +40,26 @@ style = "fg:#222222 bg:#aaaaaa"
 truncation_length = 5
 truncation_symbol = "…/"
 home_symbol = ""
-read_only_style = "fg:red bg:#3b4252"
+read_only_style = "fg:red bg:#2e3440"
 read_only = "  "
-style = "bg:#3b4252"
+style = "bg:#2e3440"
 format = "[$path]($style)[$read_only]($read_only_style)[ ]($style)"
 
 
 [git_status]
 format = '[ $all_status$ahead_behind]($style)'
-style = "bold bg:#aaaaaa"
-conflicted = "[](red) "
-up_to_date = "[](bold fg:#55ff55 bg:#aaaaaa) "
-untracked = "[](bold fg:#ffbb00 bg:#aaaaaa) "
+style = "bold bg:#4c566a"
+conflicted = "[](fg:#ff5555 bg:#4c566a) "
+up_to_date = "[](bold fg:#55ff55 bg:#4c566a) "
+untracked = "[](bold fg:#ffbb00 bg:#4c566a) "
 ahead = "⇡${count}(bold #ffbb00)"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "[⇣${count}](red)"
-stashed = "[](bold fg:blue bg:#aaaaaa)"
-modified = "[](bold fg:#f6f600 bg:#aaaaaa) "
-staged = '[++\($count\) ](bold fg:#4444aa bg:#aaaaaa)'
-renamed = "[襁](bold fg:blue bg:#aaaaaa)"
-deleted = "[](bold fg:red bg:#aaaaaa) "
+stashed = "[](bold fg:blue bg:#4c566a)"
+modified = "[](bold fg:#f6f600 bg:#4c566a) "
+staged = '[++\($count\) ](bold fg:#4444aa bg:#4c566a)'
+renamed = "[襁](bold fg:blue bg:#4c566a)"
+deleted = "[](bold fg:red bg:#4c566a) "
 
 [jobs]
 symbol = " 酪"
@@ -70,3 +70,11 @@ number_threshold = 1
 discharging_symbol="ﮊ"
 [[battery.display]]
 style = "bold red"
+
+
+[time]
+disabled = false
+format = '[$time](fg:#3b4252) '
+time_format = "%T"
+utc_time_offset = "-1"
+time_range = "0:00:00-24:00:00"
