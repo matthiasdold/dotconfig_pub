@@ -37,6 +37,7 @@ endif
 "-- for journaling TODO: to lua?
 "----------------------------------------------------------
 autocmd BufWritePost 0_combined_journal.md :! bass /home/doda/Documents/journal/sync_back_todos.sh
+autocmd FileReadPre 0_combined_journal.md :! bass /home/doda/Documents/journal/combine_journals.sh
 
 "----------------------------------------------------------
 "-- nicer execution of python files -> TODO: to lua?
@@ -66,3 +67,8 @@ autocmd BufWritePost 0_combined_journal.md :! bass /home/doda/Documents/journal/
 " This might explain other non working keymaps as well --> investigate if time allows
 vnoremap <C-s> :lua require("iron").core.visual_send()<CR>
 nnoremap <C-s> :lua require("iron").core.send_line()<CR>
+
+"----------------------------------------------------------
+"-- Spell checking
+"----------------------------------------------------------
+nnoremap <silent> <F11> :set spell!<cr>
