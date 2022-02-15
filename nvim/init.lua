@@ -22,16 +22,20 @@ require('keymappings')
 require('c_cmp')
 
 --require('c_galaxyline')
+
 require('c_lualine')
 require('c_treesitter')
 require('c_colorizer')
 require('barbar')
 require('autopairs')
 require('c_iron')
+
 -- require('neoterm')
 -- require('c_gitsigns')
+
 require('c_startify')
-require('c_nvimtree')
+--require('c_nvimtree')
+require('chadtree')
 
 -- Neogit offers some nice functionality, but slows nvim down considerably
 -- TODO: Try fugitive again

@@ -80,6 +80,11 @@ vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_t
 -- Markdown - not working: TODO - get this up
 -- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })
 
+
+-- CHADTree
+
+vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
+
 -- Other interactive
 -- easier folding
 vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true})     -- terminal mode remap

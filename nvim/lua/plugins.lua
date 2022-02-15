@@ -55,7 +55,13 @@ return require('packer').startup(function(use)
 
     -- nerd tree but nicer
     -- Actually a bit slow -> maybe replace
-    use 'kyazdani42/nvim-tree.lua'
+    -- use 'kyazdani42/nvim-tree.lua'
+
+    use({
+        "ms-jpq/chadtree",
+        branch = "chad",
+        run = ":CHADdeps",
+    })
 
     -- Colorshemes
     -- You can alias plugin names
@@ -88,6 +94,7 @@ return require('packer').startup(function(use)
     -- Autocompletion
     -- cmp plugins
     use 'hrsh7th/cmp-nvim-lsp'
+    -- use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -102,6 +109,8 @@ return require('packer').startup(function(use)
     use {'SirVer/ultisnips'}
     use "quangnguyen30192/cmp-nvim-ultisnips"
     use { 'L3MON4D3/LuaSnip' }
+
+    use {"ray-x/lsp_signature.nvim"}
 
     -- General various
     use {'windwp/nvim-autopairs'}
