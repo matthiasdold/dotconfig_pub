@@ -37,7 +37,7 @@ endif
 "-- for journaling TODO: to lua?
 "----------------------------------------------------------
 autocmd BufWritePost 0_combined_journal.md :! bass /home/doda/Documents/journal/sync_back_todos.sh
-autocmd FileReadPre 0_combined_journal.md :! bass /home/doda/Documents/journal/combine_journals.sh
+" NOTE -> the combination of the 0_combine* etc is managed in the combine_and_open_combined_journal.sh which is triggered from dwm
 
 "----------------------------------------------------------
 "-- nicer execution of python files -> TODO: to lua?
@@ -72,3 +72,12 @@ nnoremap <C-s> :lua require("iron").core.send_line()<CR>
 "-- Spell checking
 "----------------------------------------------------------
 nnoremap <silent> <F11> :set spell!<cr>
+
+
+"----------------------------------------------------------
+"-- Markdown
+"----------------------------------------------------------
+autocmd FileType markdown nnoremap <F5> :MarkdownPreviewToggle<cr>
+
+
+

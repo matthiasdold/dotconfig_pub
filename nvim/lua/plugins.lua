@@ -131,6 +131,8 @@ return require('packer').startup(function(use)
 
     -- Markdown
     use 'iamcco/markdown-preview.nvim'
+    use { 'ixru/nvim-markdown' }
+    -- use { 'ellisonleao/glow.nvim' }     -- Note the additional manual steps noted on the git page
 
     -- Nicer python indentation
     use 'Vimjas/vim-python-pep8-indent'

@@ -77,13 +77,13 @@ vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_g
 vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 
--- Markdown - not working: TODO - get this up
--- vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<CR>', { noremap = true, silent = true })
-
+-- Markdown 
+vim.api.nvim_set_keymap('n', '<leader>p', ":Glow<CR>", {noremap = true})
 
 -- CHADTree
-
 vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
+
+
 
 -- Other interactive
 -- easier folding

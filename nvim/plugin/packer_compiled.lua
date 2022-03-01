@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/forest-night",
     url = "https://github.com/sainnhe/forest-night"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -158,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/doda/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["nord-vim"] = {
     loaded = true,
@@ -203,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-markdown"] = {
+    loaded = true,
+    path = "/home/doda/.local/share/nvim/site/pack/packer/start/nvim-markdown",
+    url = "https://github.com/ixru/nvim-markdown"
   },
   ["nvim-matlab"] = {
     loaded = true,
@@ -325,10 +330,10 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end
