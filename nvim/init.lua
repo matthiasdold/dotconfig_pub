@@ -54,6 +54,9 @@ require('luasnip')
 -- Completion and LSP
 require('lsp')
 
+-- Others
+require('spellsitter').setup()
+
 
 -- require('lsp.python-ls')
 -- Vimscript based configs

@@ -77,9 +77,6 @@ vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_g
 vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 
--- Markdown 
-vim.api.nvim_set_keymap('n', '<leader>p', ":Glow<CR>", {noremap = true})
-
 -- CHADTree
 vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
 

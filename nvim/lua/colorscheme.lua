@@ -5,6 +5,8 @@
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme nord')
+-- vim.cmd('let g:codedark_conservative = 0')
+-- vim.cmd('colorscheme codedark')
 
 --Set Vim-specific sequences for RGB colors
 -- vim.cmd('let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"')

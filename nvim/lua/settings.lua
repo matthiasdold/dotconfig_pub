@@ -27,11 +27,11 @@ vim.o.termguicolors=true
 vim.o.splitright=true                       	--Vertical splits will automatically be to the right
 -- vim.o.t_Co="256"                            	--Support 256 colors --> was raising an error with latest build
 vim.o.conceallevel=0                      	--So that I can see `` in markdown files
-vim.bo.tabstop=4                           	--Insert 2 spaces for a tab
-vim.bo.softtabstop=4                           	--Insert 2 spaces for a tab
-vim.bo.shiftwidth=4                        	--Change the number of space characters inserted for indentation
-vim.bo.expandtab=true                           --Converts tabs to spaces
-vim.bo.autoindent=true
+vim.opt.tabstop=4                           	--Insert 2 spaces for a tab
+vim.opt.softtabstop=4                           	--Insert 2 spaces for a tab
+vim.opt.shiftwidth=4                        	--Change the number of space characters inserted for indentation
+vim.opt.expandtab=true                           --Converts tabs to spaces
+vim.opt.autoindent=true
 vim.wo.number = true
 vim.wo.relativenumber = true
 -- vim.wo.cursorline=true                          --Enable highlighting of the current line
@@ -48,8 +48,8 @@ vim.o.hidden=true				-- To be able to move out of a modified buffer without writ
 
 -- vim.g.asyncomplete_auto_completeopt = 0
 vim.o.completeopt="menuone,noinsert,noselect"
-vim.g.python3_host_prog='/home/doda/workspace/python/venvs/nvim_env/bin/python3.10'
-vim.g.node_host_prog='/home/doda/workspace/node/venvs/env/bin/neovim-node-host'
+vim.g.python3_host_prog='$HOME/workspace/python/venvs/nvim_env/bin/python3.10'
+vim.g.node_host_prog='$HOME/workspace/node/venvs/env/bin/neovim-node-host'
 -- For markdown preview, not creating a separate folder
 -- TOOD: get this working
 --vim.g.mkdp_browser='firefox'

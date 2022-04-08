@@ -79,5 +79,17 @@ nnoremap <silent> <F11> :set spell!<cr>
 "----------------------------------------------------------
 autocmd FileType markdown nnoremap <F5> :MarkdownPreviewToggle<cr>
 
+"----------------------------------------------------------
+"-- Again, consider taking a larger tool, with lua focus --> for now this is minimalist setup
+"-- also facilitating make files as stolen from here: https://www.preciouschicken.com/blog/posts/neovim-latex-zathura-in-perfect-harmony/
+"----------------------------------------------------------
+function! ZathuraOpenPdf()
+	let fullPath = expand("%:p")
+	let pdfFile = substitute(fullPath, ".tex", ".pdf", "")
+	execute "silent !zathura '" . pdfFile . "' &"
+endfunction
 
+nnoremap <A-p> :call ZathuraOpenPdf()<CR>
+" note, this is for preview only, for the actual compilation is am using
+" Makefiles
 

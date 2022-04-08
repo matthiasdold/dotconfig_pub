@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
     use {'arcticicestudio/nord-vim'}
+    use { 'tomasiser/vim-code-dark' }
     use 'sainnhe/sonokai'
     use 'sainnhe/forest-night'
     use 'tyrannicaltoucan/vim-deep-space'
@@ -121,7 +122,7 @@ return require('packer').startup(function(use)
     -- NOTE on neoterm -> actually this looks like the better tool for my use
     -- case, but I could not get to work, that I can send a function (multiline)
     -- and it is evaluated straight away (like I achieved in vimteractive with the
-    -- extra code) 
+    -- extra code) michaelb/sniprun
 
     -- matlab
     use 'rahlir/nvim-matlab'
@@ -131,7 +132,7 @@ return require('packer').startup(function(use)
 
     -- Markdown
     use 'iamcco/markdown-preview.nvim'
-    use { 'ixru/nvim-markdown' }
+    -- use { 'ixru/nvim-markdown' }
     -- use { 'ellisonleao/glow.nvim' }     -- Note the additional manual steps noted on the git page
 
     -- Nicer python indentation
@@ -145,6 +146,12 @@ return require('packer').startup(function(use)
 
     -- Others
     use 'airblade/vim-rooter'        -- look for project root and follow
+
+    use {
+      -- Optional but recommended
+      -- 'nvim-treesitter/nvim-treesitter',
+      'lewis6991/spellsitter.nvim',
+    }
 
  
 end)
