@@ -7,9 +7,6 @@
         And the new lua based setup
 ]]
 
--- Use the vimscript stuff here first, as the neoterm needs to happen
--- before syntax on
-
 require('plugins') --lua/plugins.lua
 
 require('colorscheme')
