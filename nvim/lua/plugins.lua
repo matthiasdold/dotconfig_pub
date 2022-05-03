@@ -66,6 +66,8 @@ return require('packer').startup(function(use)
     -- Colorshemes
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
+    use 'bluz71/vim-moonfly-colors'
+    use 'bluz71/vim-nightfly-guicolors'
     use {'arcticicestudio/nord-vim'}
     use { 'tomasiser/vim-code-dark' }
     use 'sainnhe/sonokai'
@@ -131,7 +133,12 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-startify'
 
     -- Markdown
-    use 'iamcco/markdown-preview.nvim'
+    use {
+      'iamcco/markdown-preview.nvim',
+      ft = 'markdown',
+      run = 'cd app && yarn install'
+    }
+    -- use 'iamcco/markdown-preview.nvim'
     -- use { 'ixru/nvim-markdown' }
     -- use { 'ellisonleao/glow.nvim' }     -- Note the additional manual steps noted on the git page
 

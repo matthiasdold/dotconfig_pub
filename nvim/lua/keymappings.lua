@@ -80,8 +80,6 @@ vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_t
 -- CHADTree
 vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
 
-
-
 -- Other interactive
 -- easier folding
 vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true})     -- terminal mode remap
@@ -89,3 +87,5 @@ vim.api.nvim_set_keymap('n', '<Space>', 'za', { noremap = true, silent = true}) 
 vim.api.nvim_set_keymap('i', '<C-a>', '<C-o>a', { noremap = true, silent = true})     -- terminal mode remap
 -- vim.cmd('autocmd FileType python vnoremap <silent> <C-s> m`""y:call vimteractive#sendlines(substitute(getreg(\'"\'), "\n*$", "", "")."\n")<CR>``')
 
+-- Autoformat (should be autopep8 for python)
+vim.api.nvim_set_keymap('n', 'F3', ":Autoformat<CR>", {noremap = true})
