@@ -17,4 +17,4 @@
 !assets/*
 *pycache*
 
-
+fish/config.fish
