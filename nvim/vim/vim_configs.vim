@@ -36,7 +36,7 @@ endif
 "----------------------------------------------------------
 "-- for journaling TODO: to lua?
 "----------------------------------------------------------
-autocmd BufWritePost 0_combined_journal.md :! bass /home/doda/Documents/journal/sync_back_todos.sh
+autocmd BufWritePost 0_combined_journal.md :! bass /home/md/Documents/journal/sync_back_todos.sh
 " NOTE -> the combination of the 0_combine* etc is managed in the combine_and_open_combined_journal.sh which is triggered from dwm
 
 "----------------------------------------------------------
