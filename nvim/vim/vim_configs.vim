@@ -100,3 +100,21 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+" LSP for texlab LS
+if executable('texlab')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'texlab',   
+                \ 'cmd': {server_info->['texlab']},
+                \ 'config': {
+                \     'hover_conceal': 0,
+                \ },
+                \ 'whitelist': ['bib','tex'],
+                \ })
+endif
+
+
+"----------------------------------------------------------
+"-- Closing three if last open buffer
+"----------------------------------------------------------
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif

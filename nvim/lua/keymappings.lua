@@ -78,7 +78,12 @@ vim.api.nvim_set_keymap('n', 'fb', "<Cmd>lua require('telescope.builtin').buffer
 vim.api.nvim_set_keymap('n', 'fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 
 -- CHADTree
-vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
+-- vim.api.nvim_set_keymap('n', 'e', ":CHADopen<CR>", {noremap = true})
+
+-- nvimtree
+vim.api.nvim_set_keymap('n', '<C-e>', ":NvimTreeToggle<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>r', ":NvimTreeRefresh<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>f', ":NvimTreeFindFile<CR>", {noremap = true})
 
 -- Other interactive
 -- easier folding

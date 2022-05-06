@@ -31,8 +31,8 @@ require('c_iron')
 -- require('c_gitsigns')
 
 require('c_startify')
---require('c_nvimtree')
-require('chadtree')
+require('c_nvimtree')
+--require('chadtree')
 
 -- Neogit offers some nice functionality, but slows nvim down considerably
 -- TODO: Try fugitive again
@@ -53,7 +53,6 @@ require('lsp')
 
 -- Others
 require('spellsitter').setup()
-
 
 -- require('lsp.python-ls')
 -- Vimscript based configs

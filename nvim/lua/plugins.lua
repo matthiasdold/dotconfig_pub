@@ -54,14 +54,18 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
 
     -- nerd tree but nicer
-    -- Actually a bit slow -> maybe replace
-    -- use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-tree.lua'
 
-    use({
-        "ms-jpq/chadtree",
-        branch = "chad",
-        run = ":CHADdeps",
-    })
+    -- was faster, but broke with last update
+    -- use({
+    --     "ms-jpq/chadtree",
+    --     branch = "chad",
+    --     run = ":CHADdeps",
+    -- })
+
+
+
+
 
     -- Colorshemes
     -- You can alias plugin names

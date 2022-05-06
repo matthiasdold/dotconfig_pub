@@ -7,3 +7,5 @@ require "lsp.lsp-installer"
 require("lsp.handlers").setup()
 require "lsp.null-ls"
 require "lsp.settings.lsp_signature"
+
+vim.lsp.set_log_level("debug")
