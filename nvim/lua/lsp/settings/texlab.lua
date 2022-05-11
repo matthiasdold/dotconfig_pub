@@ -78,21 +78,27 @@ return {
     single_file_support = true,
     settings = {
       texlab = {
-        rootDirectory = nil,
+        rootDirectory = '.',
         build = {
           executable = 'latexmk',
-          args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '%f' },
-          onSave = false,
-          forwardSearchAfter = false,
+          args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '-pvc', '%f' },
+          onSave = true,
+          forwardSearchAfter = true,
+          isContinuous = true
+        },
+        -- Config as found here: https://github.com/f3fora/nvim-texlabconfig
+        forwardSearch = {
+            executable = 'okular',
+            args = {
+                '--unique',
+                --'file:%p#src:%l%f',
+                'file:%p#src:%l%f',
+            },
         },
         auxDirectory = '.',
-        forwardSearch = {
-          executable = nil,
-          args = {},
-        },
         chktex = {
-          onOpenAndSave = false,
-          onEdit = false,
+          onOpenAndSave = true,
+          onEdit = true,
         },
         diagnosticsDelay = 300,
         latexFormatter = 'latexindent',

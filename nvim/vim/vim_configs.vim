@@ -118,3 +118,11 @@ endif
 "-- Closing three if last open buffer
 "----------------------------------------------------------
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+
+
+"----------------------------------------------------------
+"-- Vimtex (for quicker config doing it here for now)
+"----------------------------------------------------------
+" Or with a generic interface:
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'

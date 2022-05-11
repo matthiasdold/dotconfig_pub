@@ -7,6 +7,6 @@ The by far most significant config in here is for [neovim](./nvim/README.md) whi
 ![nvim_screenshot](./assets/nvim_screenshot.png)
 
 #### Starship
-Some minur config also went into the starhship promt, which is much easier to handle and more performant than the powerline I used before.
+Some minor config also went into the starhship prompt, which is much easier to handle and more performant than the powerline I used before.
 ![Starship_promt](./assets/starship_screenshot.png)
 

@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/md/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
-  chadtree = {
-    loaded = true,
-    path = "/home/md/.local/share/nvim/site/pack/packer/start/chadtree",
-    url = "https://github.com/ms-jpq/chadtree"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/md/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -210,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/md/.local/share/nvim/site/pack/packer/start/nvim-matlab",
     url = "https://github.com/rahlir/nvim-matlab"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/md/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -340,6 +340,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/md/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/md/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/ lervag/vimtex"
   }
 }
 

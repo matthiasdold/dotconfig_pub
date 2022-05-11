@@ -164,6 +164,9 @@ return require('packer').startup(function(use)
       'lewis6991/spellsitter.nvim',
     }
 
+    -- Latex
+    use {'lervag/vimtex'}
+
  
 end)
 

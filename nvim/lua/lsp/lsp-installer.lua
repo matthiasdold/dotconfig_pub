@@ -20,11 +20,12 @@ lsp_installer.on_server_ready(function(server)
 	 	local sumneko_opts = require("lsp.settings.sumneko_lua")
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end
-
-	 if server.name == "texlab" then
-	 	local texlab_opts = require("lsp.settings.texlab")
-	 	opts = vim.tbl_deep_extend("force", texlab_opts, opts)
-	 end
+    
+     -- NOTE as of 20220510, I could not get this to work properly with local latexmkrc files --> maybe retry
+	 -- if server.name == "texlab" then
+	 -- 	local texlab_opts = require("lsp.settings.texlab")
+	 -- 	opts = vim.tbl_deep_extend("force", texlab_opts, opts)
+	 -- end
 
 	 -- if server.name == "pylsp" then
 	 -- 	local pylsp_opts = require("lsp.settings.pylsp")
