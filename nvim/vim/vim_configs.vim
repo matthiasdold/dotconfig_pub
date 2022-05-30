@@ -126,3 +126,12 @@ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tab
 " Or with a generic interface:
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
+
+"----------------------------------------------------------
+"-- Some file dependent config TODO: Implement in lua
+" Have a look at this link: https://alpha2phi.medium.com/neovim-for-beginners-lua-autocmd-and-keymap-functions-3bdfe0bebe42
+"----------------------------------------------------------
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
