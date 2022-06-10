@@ -77,7 +77,13 @@ nnoremap <silent> <F11> :set spell!<cr>
 "----------------------------------------------------------
 "-- Markdown
 "----------------------------------------------------------
-autocmd FileType markdown nnoremap <F5> :MarkdownPreviewToggle<cr>
+autocmd FileType markdown nnoremap <leader>w :MarkdownPreviewToggle<cr>
+
+"----------------------------------------------------------
+"-- Web development 
+"----------------------------------------------------------
+autocmd FileType html,css,js nnoremap <leader>w :Dispatch browser-sync start --server --files "*.js, *.html, *.css"<cr>
+
 
 "----------------------------------------------------------
 "-- Again, consider taking a larger tool, with lua focus --> for now this is minimalist setup
