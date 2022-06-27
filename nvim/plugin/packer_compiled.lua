@@ -344,7 +344,7 @@ _G.packer_plugins = {
   vimtex = {
     loaded = true,
     path = "/home/md/.local/share/nvim/site/pack/packer/start/vimtex",
-    url = "https://github.com/ lervag/vimtex"
+    url = "https://github.com/lervag/vimtex"
   }
 }
 

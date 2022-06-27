@@ -65,8 +65,8 @@ autocmd BufWritePost 0_combined_journal.md :! bass /home/md/Documents/journal/sy
 " vim.api.nvim_set_keymap('v', '<C-s>', '<Cmd>lua require("iron").core.visual_send()<CR>', { noremap = true})
 "
 " This might explain other non working keymaps as well --> investigate if time allows
-vnoremap <C-s> :lua require("iron").core.visual_send()<CR>
-nnoremap <C-s> :lua require("iron").core.send_line()<CR>
+" vnoremap <C-s> :lua require("iron").core.visual_send()<CR>
+" nnoremap <C-s> :lua require("iron").core.send_line()<CR>
 
 "----------------------------------------------------------
 "-- Spell checking
@@ -82,7 +82,8 @@ autocmd FileType markdown nnoremap <leader>w :MarkdownPreviewToggle<cr>
 "----------------------------------------------------------
 "-- Web development 
 "----------------------------------------------------------
-autocmd FileType html,css,js nnoremap <leader>w :Dispatch browser-sync start --server --files "*.js, *.html, *.css"<cr>
+" Note: As of 2022-06-22 I had to source the correct node environment. Not sure what changed
+autocmd FileType html,css,js nnoremap <leader>w :Dispatch snode & browser-sync start --server --files "*.js, *.html, *.css, css/*.css, js/*.js"<cr>
 
 
 "----------------------------------------------------------
@@ -107,17 +108,17 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
-" LSP for texlab LS
-if executable('texlab')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'texlab',   
-                \ 'cmd': {server_info->['texlab']},
-                \ 'config': {
-                \     'hover_conceal': 0,
-                \ },
-                \ 'whitelist': ['bib','tex'],
-                \ })
-endif
+"" LSP for texlab LS
+"if executable('texlab')
+"    au User lsp_setup call lsp#register_server({
+"                \ 'name': 'texlab',   
+"                \ 'cmd': {server_info->['texlab']},
+"                \ 'config': {
+"                \     'hover_conceal': 0,
+"                \ },
+"                \ 'whitelist': ['bib','tex'],
+"                \ })
+"endif
 
 
 "----------------------------------------------------------

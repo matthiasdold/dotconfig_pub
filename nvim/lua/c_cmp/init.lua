@@ -126,7 +126,7 @@ cmp.setup {
       {name = "latex_symbols"},
       {name = "neorg"},
       {name = "cmp_luasnip"},
-      -- {name = "nvim_lsp_signature_help"}
+      {name = "nvim_lsp_signature_help"}
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
