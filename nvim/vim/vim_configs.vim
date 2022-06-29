@@ -108,6 +108,11 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
+" Highlight current line
+hi CursorLineNr guifg=#aef202 guibg=None
+set cursorline
+set cursorlineopt=number    " do not highlight the full line
+
 "" LSP for texlab LS
 "if executable('texlab')
 "    au User lsp_setup call lsp#register_server({
