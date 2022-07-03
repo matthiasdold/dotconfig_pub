@@ -40,6 +40,7 @@ require('c_nvimtree')
 
 -- Commenting
 require('c_comment')
+-- require('Comment').setup()      -- default setup
 
 
 -- Others
