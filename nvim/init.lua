@@ -44,10 +44,10 @@ require('c_comment')
 
 
 -- Others
--- require('c_vim_rooter')
+require('c_rooter')                 -- change root on file open
 require('c_ulti_snippets')
 require('luasnip')
--- require('c_telescope')
+require('c_telescope')              -- fuzzy finding
 
 -- Completion and LSP
 require('lsp')

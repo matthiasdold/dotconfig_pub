@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     use {"nvim-lua/plenary.nvim"}
     use {
         'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+        requires = { {'nvim-lua/plenary.nvim'} }
         }
 
     -- tab bars
@@ -167,6 +167,11 @@ return require('packer').startup(function(use)
     -- Latex
     use {'lervag/vimtex'}
 
+    -- Changing root with file changes
+    use {
+        'notjedi/nvim-rooter.lua',
+        config = function() require'nvim-rooter'.setup() end
+    }
  
 end)
 

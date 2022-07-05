@@ -6,6 +6,9 @@ highlight Folded guibg=#39393f guifg=#81a1c1 gui=None
 highlight Comment gui=italic					
 set cc=80
 
+" For the matching parenteses / brakets
+highlight MatchParen guifg=#ff3555 guibg=None gui=bold
+
 "----------------------------------------------------------
 "-- Custom highlighting
 "----------------------------------------------------------
