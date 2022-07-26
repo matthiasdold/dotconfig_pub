@@ -44,7 +44,7 @@ require('c_comment')
 
 
 -- Others
-require('c_rooter')                 -- change root on file open
+require('c_rooter')                 -- change root on file open -- not yet a good config
 require('c_ulti_snippets')
 require('luasnip')
 require('c_telescope')              -- fuzzy finding

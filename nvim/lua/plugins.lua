@@ -63,10 +63,6 @@ return require('packer').startup(function(use)
     --     run = ":CHADdeps",
     -- })
 
-
-
-
-
     -- Colorshemes
     -- You can alias plugin names
     -- use {'dracula/vim', as = 'dracula'}
@@ -156,23 +152,21 @@ return require('packer').startup(function(use)
     use 'tmhedberg/SimpylFold'
 
     -- Others
-    use 'airblade/vim-rooter'        -- look for project root and follow
-
     use {
       -- Optional but recommended
       -- 'nvim-treesitter/nvim-treesitter',
       'lewis6991/spellsitter.nvim',
     }
+    use {
+        'notjedi/nvim-rooter.lua',
+    }
+
+    -- highlighting matching words
+    use { 'andymass/vim-matchup' }
 
     -- Latex
     use {'lervag/vimtex'}
 
-    -- Changing root with file changes
-    use {
-        'notjedi/nvim-rooter.lua',
-        config = function() require'nvim-rooter'.setup() end
-    }
- 
 end)
 
 

@@ -8,6 +8,9 @@ require'nvim-treesitter.configs'.setup {
   },
   context_commenting = {
 	enable = true,
+  },
+  matchup = {   -- requires andymass/vim-matchup
+    enable = true,
   }
   --[[refactor = {
       highlight_definitions = {

@@ -22,7 +22,6 @@ require('Comment').setup(
             line = '<C-c>',-- 'gcc',
             ---Block-comment toggle keymap
             block = 'gbc',
-            block = 'gcb',
         },
 
         ---LHS of operator-pending mappings in NORMAL + VISUAL mode
