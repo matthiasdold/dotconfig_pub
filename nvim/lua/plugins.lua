@@ -76,7 +76,12 @@ return require('packer').startup(function(use)
     use 'jacoborus/tender.vim'
 
     -- Preview Colors
-    use 'norcalli/nvim-colorizer.lua'
+    -- use 'norcalli/nvim-colorizer.lua' --> might slow telescope, see https://github.com/nvim-telescope/telescope.nvim/issues/2008
+    -- --> Alternative? Not lua but claims to be very fast
+    use {
+      'RRethy/vim-hexokinase',
+      run = 'cd ~/.local/share/nvim/site/pack/packer/start/vim-hexokinase && make hexokinase'
+    }
 
     -- Advanced syntax higlighting
     -- use 'sheerun/vim-polyglot' try to disable / potential issues with

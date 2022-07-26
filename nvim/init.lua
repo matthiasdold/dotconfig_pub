@@ -22,7 +22,8 @@ require('c_cmp')
 
 require('c_lualine')
 require('c_treesitter')
-require('c_colorizer')
+require('c_hexokinase')
+
 require('barbar')
 require('autopairs')
 require('c_iron')

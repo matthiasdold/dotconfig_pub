@@ -181,11 +181,6 @@ _G.packer_plugins = {
     path = "/home/md/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/md/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/md/.local/share/nvim/site/pack/packer/start/nvim-dap",
@@ -295,6 +290,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/md/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-hexokinase"] = {
+    loaded = true,
+    path = "/home/md/.local/share/nvim/site/pack/packer/start/vim-hexokinase",
+    url = "https://github.com/RRethy/vim-hexokinase"
   },
   ["vim-matchup"] = {
     loaded = true,
