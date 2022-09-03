@@ -22,11 +22,12 @@ require('c_cmp')
 
 require('c_lualine')
 require('c_treesitter')
+-- require('c_treesitter_context')       -- sticky header of functions etc -- not working as of 2022-09-03 retry another time
 require('c_hexokinase')
 
 require('barbar')
 require('autopairs')
-require('c_iron')
+-- require('c_iron')
 
 -- require('neoterm')
 -- require('c_gitsigns')

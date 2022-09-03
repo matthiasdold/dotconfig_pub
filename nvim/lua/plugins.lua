@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
 
     -- Better syntax higlighting
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-context'
+    use 'wellle/context.vim'
+
     use 'nvim-treesitter/playground'
     -- use 'JoosepAlviste/nvim-ts-context-commentstring'    -- nice way of commenting in different languages -> usig <g-c-c> key combo
     use { 'numToStr/Comment.nvim' }
@@ -68,7 +71,7 @@ return require('packer').startup(function(use)
     -- use {'dracula/vim', as = 'dracula'}
     use 'bluz71/vim-moonfly-colors'
     use 'bluz71/vim-nightfly-guicolors'
-    use {'arcticicestudio/nord-vim'}
+    -- use {'arcticicestudio/nord-vim'}
     use { 'tomasiser/vim-code-dark' }
     use 'sainnhe/sonokai'
     use 'sainnhe/forest-night'
@@ -99,7 +102,17 @@ return require('packer').startup(function(use)
     -- LSP for rust
     use { 'simrat39/rust-tools.nvim' }
 
-    use 'glepnir/lspsaga.nvim'
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+            saga.init_lsp_saga({
+                -- your configuration
+            })
+        end,
+    })
+    -- use 'glepnir/lspsaga.nvim'
     -- use {'onsails/lspkind-nvim'}
 
     -- Autocompletion
