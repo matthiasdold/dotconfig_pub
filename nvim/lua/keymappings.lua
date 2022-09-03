@@ -68,8 +68,24 @@ vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = 
 -- interesting fact, I could not get this to work with 'bash'
 -- TODO: Think about how to derive the currently used venv -> not having svenv statically
 vim.o.shell="fish"
-vim.api.nvim_set_keymap('n', '<C-x>', ":vsplit| :term svenv; python %<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<S-P>', ":vsplit| :term svenv; python3 -m cProfile -o program.prof %; snakeviz program.prof<CR>", {noremap = true})
+
+-- NOTE: Mapping multiple commands piped (|) cannot be done with nvim_create_autocmds "command" but must be used with a separate callback function
+vim.api.nvim_create_autocmd("FileType", { pattern = "python",
+    callback = function () 
+                vim.api.nvim_set_keymap("n", "<C-x>", ":vsplit | :term svenv; python %<CR>",
+                                        { noremap = true, silent = true })
+                end})
+vim.api.nvim_create_autocmd("FileType", { pattern = "rust",
+    callback = function () 
+                vim.api.nvim_set_keymap("n", "<C-x>", ":vsplit | :term cargo run<CR>",
+                                        { noremap = true, silent = true })
+                end})
+vim.api.nvim_create_autocmd("FileType", { pattern = "rust",
+    callback = function () 
+                vim.api.nvim_set_keymap("n", "<C-b>", ":vsplit | :term cargo build<CR>",
+                                        { noremap = true, silent = true })
+                end})
+
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true})

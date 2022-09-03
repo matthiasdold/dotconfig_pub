@@ -96,6 +96,9 @@ return require('packer').startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "jose-elias-alvarez/null-ls.nvim"  -- looks usefull
 
+    -- LSP for rust
+    use { 'simrat39/rust-tools.nvim' }
+
     use 'glepnir/lspsaga.nvim'
     -- use {'onsails/lspkind-nvim'}
 

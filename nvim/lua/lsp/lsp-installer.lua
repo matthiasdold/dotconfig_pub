@@ -100,6 +100,8 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
         local sumneko_opts = require("lsp.settings.sumneko_lua")
         lspconfig.sumneko_lua.setup { opts = vim.tbl_deep_extend("force", sumneko_opts, opts)}
     -- servers with default settings
+    elseif server.name == "rust_analyzer" then
+        require("rust-tools").setup {}
     else
         lspconfig[server.name].setup {
             on_attach = on_attach,

@@ -23,6 +23,10 @@ error_symbol = "[](bold red)"
 symbol = "[](green)"
 style = "bold green"
 
+
+[rust]
+symbol = ""
+
 [git_branch]
 format = "[$symbol$branch]($style)"
 symbol = " "
