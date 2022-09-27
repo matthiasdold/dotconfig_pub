@@ -1,0 +1,100 @@
+snippet #md "My python header"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# author: Matthias Dold
+# date: `date +%Y%m%d`
+#
+# ${1:Summary}
+
+endsnippet	
+
+
+snippet conf "Get config from pdata container"
+conf = pdata['config'].data
+endsnippet	
+
+
+
+snippet pfun "xileh pipeline function"
+def ${1:fun_name}(pdata: xPData) -> xPData:
+    $0
+    return pdata
+
+endsnippet	
+
+
+snippet #mdp "My python header for pipelines"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# author: Matthias Dold
+# date: `date +%Y%m%d`
+#
+# ${1:Summary}
+
+from fire import Fire
+from xileh import xPData, xPipeline
+
+
+# ==============================================================================
+# Functions
+# ==============================================================================
+
+
+# ==============================================================================
+# Pipelines
+# ==============================================================================
+pl = xPipeline("${2:my_description}", log_eval=False)
+
+
+# ==============================================================================
+# CLI
+# ==============================================================================
+def main():
+
+    pdata = xPData([], name="${3:my_container}")
+    return 0
+
+
+if __name__ == '__main__':
+    Fire(main)
+
+endsnippet	
+
+
+
+#! header
+snippet #! "#!/usr/bin/env python" b
+#!/usr/bin/env python
+$0
+endsnippet
+
+snippet "^# ?[uU][tT][fF]-?8" "# encoding: UTF-8" r
+# -*- coding: utf-8 -*-
+$0
+endsnippet
+
+snippet ifmain "ifmain" b
+if __name__ == '__main__':
+	${1:${VISUAL:main()}}
+endsnippet
+
+snippet with "with" b
+with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
+	${3:${VISUAL:pass}}
+$0
+endsnippet
+
+snippet for "for loop" b
+for ${1:item} in ${2:iterable}:
+	${3:${VISUAL:pass}}
+endsnippet
+
+
+snippet #== "My section divider"
+# ============================================================================== 
+# ${1: section_name}
+# ============================================================================== 
+
+endsnippet
