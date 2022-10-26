@@ -24,7 +24,7 @@ alias ll='ls --color=auto -alFh'
 alias fchroni='ssh -i ~/.ssh/id_rsa matze@chronicler.de'
 alias svenv='source ~/workspace/python/venvs/wvenv3.10/bin/activate.fish'
 # change the eps1 to not modify prompt
-alias nv='svenv nvim'
+alias nv='svenv; nvim'
 alias tm='tmux'
 
 # super nice: Spawns a new terminal a the same pwd!

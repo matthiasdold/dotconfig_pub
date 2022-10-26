@@ -188,6 +188,9 @@ return require('packer').startup(function(use)
     -- Latex
     use {'lervag/vimtex'}
 
+    -- Shader editing
+    use {'tikhomirov/vim-glsl'}
+
 end)
 
 
