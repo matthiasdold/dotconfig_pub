@@ -43,6 +43,8 @@ require('c_nvimtree')
 require('c_comment')
 -- require('Comment').setup()      -- default setup
 
+-- Moving around
+require('leap').add_default_mappings()
 
 -- Others
 require('c_rooter')                 -- change root on file open -- not yet a good config
@@ -52,6 +54,9 @@ require('c_telescope')              -- fuzzy finding
 
 -- Completion and LSP
 require('lsp')
+
+-- Debugging
+require('dap-python').setup('~/workspace/python/venvs/wvenv3.11/bin/python')
 
 -- Others
 require('spellsitter').setup()

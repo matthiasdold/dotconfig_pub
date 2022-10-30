@@ -52,7 +52,7 @@ vim.g.tex_flavor='latex'                        -- to also have files ot type pl
 
 -- vim.g.asyncomplete_auto_completeopt = 0
 vim.o.completeopt="menuone,noinsert,noselect"
-vim.g.python3_host_prog='$HOME/workspace/python/venvs/nvim_env/bin/python3.10'
+vim.g.python3_host_prog='$HOME/workspace/python/venvs/nvim_env/bin/python3.11'
 -- vim.g.node_host_prog='/opt/homebrew/bin/node'
 -- For markdown preview, not creating a separate folder
 -- TOOD: get this working

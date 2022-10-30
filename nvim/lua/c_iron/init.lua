@@ -17,14 +17,14 @@ iron.setup {
     preferred = {
         python = "ipython"
     },
-    repl_open_cmd = require('iron.view').right(
-        function()
-            return math.floor(vim.o.columns / 3)
-        end
-    ),
+    repl_open_cmd = "80vs",       -- this could be a vim command or a lua function
+    -- require('iron.view').right(
+        -- function()
+            -- return math.floor(vim.o.columns / 3)
+        -- end
+    -- ),
     -- how the REPL window will be opened, the default is opening
     -- a float window of height 40 at the bottom.
-
     buflist = true,
   },
   -- Iron doesn't set keymaps by default anymore. Set them here

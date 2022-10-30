@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/iron.nvim",
     url = "https://github.com/hkupty/iron.nvim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -191,6 +196,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -278,11 +288,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
-  },
-  ultisnips = {
-    loaded = true,
-    path = "/Users/matthias.dold/.local/share/nvim/site/pack/packer/start/ultisnips",
-    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-code-dark"] = {
     loaded = true,

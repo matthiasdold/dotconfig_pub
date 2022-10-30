@@ -1,7 +1,6 @@
 --Bootstrapping for the package manager -> install on any system which contains
--- this config
+-- this sonfig
 local execute = vim.api.nvim_command local fn = vim.fn
-
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
@@ -130,7 +129,7 @@ return require('packer').startup(function(use)
     use {'hrsh7th/vim-vsnip-integ'}
     use {'honza/vim-snippets'}
     -- use {'cstrap/python-snippets'}
-    use {'SirVer/ultisnips'}
+    -- use {'SirVer/ultisnips'}
     use "quangnguyen30192/cmp-nvim-ultisnips"
     use { 'L3MON4D3/LuaSnip' }
 
@@ -190,6 +189,13 @@ return require('packer').startup(function(use)
 
     -- Shader editing
     use {'tikhomirov/vim-glsl'}
+
+    -- Debugging
+    use {'mfussenegger/nvim-dap'}
+    use {'mfussenegger/nvim-dap-python'}
+
+    -- Better moving around
+    use {'ggandor/leap.nvim'}
 
 end)
 

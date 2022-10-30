@@ -11,12 +11,12 @@ require'nvim-treesitter.configs'.setup {
   },
   matchup = {   -- requires andymass/vim-matchup
     enable = true,
-  }
-  --[[refactor = {
+  },
+  refactor = {
       highlight_definitions = {
         enable = true
-      },  
-   }]]
+      },
+   }
 }
 -- vim.cmd[[set foldmethod=expr]]
 -- vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]

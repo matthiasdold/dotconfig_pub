@@ -86,7 +86,6 @@ vim.api.nvim_create_autocmd("FileType", { pattern = "rust",
                                         { noremap = true, silent = true })
                 end})
 
-
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap('n', 'fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
@@ -110,3 +109,20 @@ vim.api.nvim_set_keymap('i', '<C-a>', '<C-o>a', { noremap = true, silent = true}
 
 -- Autoformat (should be autopep8 for python)
 vim.api.nvim_set_keymap('n', 'F3', ":Autoformat<CR>", {noremap = true})
+
+
+-- Debug Agent Protocol (DAP)
+vim.api.nvim_set_keymap('n', 'F5', "<Cmd>lua require'dap'.continue()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'F10', "<Cmd>lua require'dap'.step_over()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'F11', "<Cmd>lua require'dap'.step_into()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'F12', "<Cmd>lua require'dap'.step_out()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>b', "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>B', "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>lp', "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dr', "<Cmd>lua require'dap'.repl.open()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dl', "<Cmd>lua require'dap'.run_last()<CR>", {noremap = true})
+
+vim.api.nvim_set_keymap('n', '<leader>dn', "<Cmd>lua require('dap-python').test_method()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>df', "<Cmd>lua require('dap-python').test_class()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>ds', "<ESC><Cmd>lua require('dap-python').debug_selection()<CR>", {noremap = true})
+
