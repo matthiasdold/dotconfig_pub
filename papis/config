@@ -1,8 +1,9 @@
-[papers]
-dir = ~/Documents/papers
-opentool = okular
-
 [settings]
 default-library = papers
 editor = nvim
+add-open = True
+add-confirm = True
 
+[papers]
+dir = ~/Documents/papers
+add-folder-name = {doc[author_list][0][family]}{doc[year]}-{doc[title]:.30}
