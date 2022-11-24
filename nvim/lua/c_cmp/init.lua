@@ -48,7 +48,7 @@ vim.cmd('hi CmpItemAbbrMatch gui=bold guifg=#a3be8c')
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+        require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -115,7 +115,6 @@ cmp.setup {
       {name = "vsnip"},
       {name = "path"},
       {name = "luasnip"},
-      {name = "ultisnips"},
       {name = "buffer"},
       {name = "nvim_lua"},
       {name = "treesitter"},

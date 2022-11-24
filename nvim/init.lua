@@ -48,12 +48,14 @@ require('leap').add_default_mappings()
 
 -- Others
 require('c_rooter')                 -- change root on file open -- not yet a good config
-require('c_ulti_snippets')
-require('luasnip')
 require('c_telescope')              -- fuzzy finding
 
 -- Completion and LSP
 require('lsp')
+
+-- load snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+require('c_neogen')
 
 -- Debugging
 require('dap-python').setup('~/workspace/python/venvs/wvenv3.11/bin/python')

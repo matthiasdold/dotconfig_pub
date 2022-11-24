@@ -1,4 +1,4 @@
---Bootstrapping for the package manager -> install on any system which contains
+    --Bootstrapping for the package manager -> install on any system which contains
 -- this sonfig
 local execute = vim.api.nvim_command local fn = vim.fn
 
@@ -90,9 +90,6 @@ return require('packer').startup(function(use)
     -- treesitter???
     -- definitely faster without
 
-    -- Debugger
-    use {'mfussenegger/nvim-dap'}
-
     -- LSPs
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -121,17 +118,23 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/nvim-cmp" -- The completion plugin
+    use "hrsh7th/nvim-cmp" -- The completion plugin  
 
-    use {'hrsh7th/cmp-vsnip'}
-    use {'hrsh7th/vim-vsnip'}
-    use {'hrsh7th/vim-vsnip-integ'}
-    use {'honza/vim-snippets'}
-    -- use {'cstrap/python-snippets'}
-    -- use {'SirVer/ultisnips'}
-    use "quangnguyen30192/cmp-nvim-ultisnips"
-    use { 'L3MON4D3/LuaSnip' }
+    -- Snippets
+    -- use 'hrsh7th/cmp-vsnip'
+    -- use 'hrsh7th/vim-vsnip'
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions in cmp
+    use 'hrsh7th/vim-vsnip-integ'      -- to integrate with the lsp client
+    use "rafamadriz/friendly-snippets" -- predefined snippets
+
+    -- Auto Docstring generation
+    use {
+        "danymat/neogen",
+        requires = "nvim-treesitter/nvim-treesitter",
+        -- Uncomment next line if you want to follow only stable versions
+        -- tag = "*"
+    }
 
     use {"ray-x/lsp_signature.nvim"}
 

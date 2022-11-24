@@ -48,7 +48,7 @@ O = {
     }
 }
 
-luasnip = require('luasnip')
+--luasnip = require('luasnip')
 
 DATA_PATH = vim.fn.stdpath('data')
 print(DATA_PATH)

@@ -1,6 +1,6 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
+local my_glyphs = {
   default = "",
   symlink = "",
   git = {
@@ -35,7 +35,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   update_cwd = false,
   view = {
     width = 30,
-    height = 30,
+    -- height = 30,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -59,6 +59,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       },
     },
     icons = {
+      glyphs = my_glyphs,
       webdev_colors = true,
     },
   },
