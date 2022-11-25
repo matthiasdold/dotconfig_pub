@@ -1,4 +1,4 @@
-    --Bootstrapping for the package manager -> install on any system which contains
+                --Bootstrapping for the package manager -> install on any system which contains
 -- this sonfig
 local execute = vim.api.nvim_command local fn = vim.fn
 
@@ -94,6 +94,10 @@ return require('packer').startup(function(use)
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "jose-elias-alvarez/null-ls.nvim"  -- looks usefull
+
+    -- Mason for managing LSP linters formatters etc
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
 
     -- LSP for rust
     use { 'simrat39/rust-tools.nvim' }

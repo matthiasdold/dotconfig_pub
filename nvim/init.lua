@@ -51,6 +51,8 @@ require('c_rooter')                 -- change root on file open -- not yet a goo
 require('c_telescope')              -- fuzzy finding
 
 -- Completion and LSP
+require("mason").setup()            -- mason stuff needs to come before LSP
+require("mason-lspconfig").setup()
 require('lsp')
 
 -- load snippets
